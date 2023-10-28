@@ -1,0 +1,43 @@
+.HeroContainer{
+    // border: 1px solid red;
+    background-color:#222;
+    border-radius: 32px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // padding-left: 117px;
+    padding: 40px 0 40px 0;
+    gap: 20px;
+    // margin-bottom: 82px;
+
+    p{
+        span{
+            background: linear-gradient(91deg, #E9BA67 22.54%, #ED9C7D 47.83%, #E68DA9 55.52%, #DA8EB4 74.48%);
+            background-clip: text; /* Apply the background color to the text itself */
+            -webkit-background-clip: text; /* For some older browsers */
+            color: transparent;
+        }
+    }
+    img{
+        // border: 1px solid red;
+        height: 175px;
+        margin: 0 auto;
+    }
+}
+
+.cardGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; 
+    justify-content: space-around; /* Center cards horizontally */
+    padding-top: 20px;
+    margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .gcardGrid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust column width for smaller screens */
+    }
+  }
