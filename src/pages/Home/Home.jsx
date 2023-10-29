@@ -1,4 +1,6 @@
 import HeroIcon from '../../assets/HeroIcon.svg'
+import Search from '../../assets/Search.svg'
+
 import { FigCard } from '../../components/compound/FigCard/FigCard'
 import styles from './Home.module.scss'
 const Home = () => {
@@ -10,6 +12,16 @@ const Home = () => {
                <img src={HeroIcon}/>
             </section>
         </header>
+        <section className={styles.searchAndFilterContainer}>
+          <div className={styles.FilterContainer}>
+            <p>UI elements</p>
+            <p>Empty graphics</p>
+          </div>
+          <div  className={styles.SearchContainer}>
+          <img src={Search}/>
+            <input placeholder='Search'/>
+          </div>
+        </section>
         <section className={styles.cardGrid}>
             <FigCard/>
             <FigCard/>

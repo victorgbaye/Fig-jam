@@ -28,6 +28,39 @@
     }
 }
 
+.searchAndFilterContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    .FilterContainer{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        p{
+            background-color: #DAD7CE;
+            border-radius: 100px;
+            padding: 8px 12px;
+        }
+    }
+    .SearchContainer{
+        display: flex;
+        align-items: center;
+        border: 1px solid #E3E3E3;
+        border-radius: 8px;
+        width: 260px;
+        padding: 8px 16px;
+        background: #FFF;
+        gap: 8px;
+        input{
+            outline: none;
+            border: none;
+            background: none;
+        }
+    }
+}
 .cardGrid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 

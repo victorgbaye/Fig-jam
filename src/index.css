@@ -10,7 +10,7 @@
 
   /* color-scheme: light dark; */
   /* color: rgba(255, 255, 255, 0.87); */
-  background-color: #F0EFEB;
+  background-color: #F8F8F8;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -30,8 +30,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex;
+  place-items: center; */
   min-width: 320px;
   min-height: 100vh;
 }
