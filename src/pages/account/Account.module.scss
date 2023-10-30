@@ -1,5 +1,36 @@
+.AccountAction{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .editButton{
+        display: flex;
+        gap: 12px;
+        background: black;
+        color: white;
+        padding: 12px 20px;
+        font-style: normal;
+        border-radius: 8px;
+    }
+    .deleteButton{
+        display: flex;
+        gap: 12px;
+        padding: 12px 20px;
+        font-style: normal;
+        border-radius: 8px;
+    }
+}
 .AccountDetailsContainer{
     background: white;
     border-radius: 28px;
     padding: 20px;
+}
+.AccountDetailsFlex{
+    display: flex;
+    gap: 20px;
+    // justify-content: space-between;
+    width: 100%;
+    // border: 1px solid red;
 }

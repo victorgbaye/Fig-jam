@@ -25,12 +25,15 @@ Input.propTypes = {
   };
 
 
-export const AccountInput = ({label}) =>{
+export const AccountInput = ({label, style, readOnly}) =>{
     return(
         <div className={styles.AccountInputContainer}>
             <label>{label}</label>
             <input
              className={styles.AccountInput}
+             style={style}
+             readOnly={readOnly}
+             
             />
         </div>
     )
@@ -41,8 +44,9 @@ AccountInput.propTypes = {
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     style: PropTypes.object, 
+    readOnly: PropTypes.bool.isRequired,
   };
 
 
