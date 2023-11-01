@@ -1,0 +1,62 @@
+.navWrapper{
+    
+}
+.navigationContainer{
+    padding: 40px;
+    background-color:#222;
+     border-radius: 16px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // padding-left: 117px;
+    gap: 20px;
+    // margin-bottom: 82px;
+}
+.nav{
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    border: 1px solid #555;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    // position: relative;
+    
+}
+.userSec{
+}
+.navDropdown{
+    position: absolute;
+    top: 150px;
+    right: 100px;
+    // bottom: -105px;
+    // right: -10px;
+    padding: 16px;
+    border-radius: 12px;
+    background: #FFF;
+    width: 220px;
+    span{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #000;
+        font-size: 14px;
+        font-weight: 300;
+        padding: 8px 12px;
+        width: 100%;
+       
+    }
+
+}
+.navDropdown span:hover{
+    background: #EDEBE7;
+    cursor: pointer;
+    border-radius: 8px;
+}

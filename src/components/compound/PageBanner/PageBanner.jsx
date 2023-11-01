@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import styles from './PageBanner.module.scss'
 import Cursor from '../../../assets/Cursor.svg'
+import Navigation from '../Navigation/Navigation';
 export const PageBanner = ({ title }) => {
   return (
     <div>
-        <header>
+        <header className={styles.BannerWrapper}>
+        <Navigation/>
       <section className={styles.HeroContainer}>
         <p>
           {title}

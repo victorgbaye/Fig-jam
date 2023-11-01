@@ -25,7 +25,14 @@
     gap: 8px;
     align-items: flex-start;
     width: 100%;
-
+    label{
+        color:#3D3D3D;
+        font-size: 14px;
+    }
+    input{
+        font-size: 16px;
+        font-weight: 400;
+    }
 }
 .AccountInput{
    outline: none;

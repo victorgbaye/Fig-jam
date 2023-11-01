@@ -9,6 +9,7 @@ import Save from '../../assets/Save.svg'
 
 import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
 import Modal from '../../components/compound/modal/Modal'
+import Alert from "../../components/compound/Alert/Alert";
 
 const Account = () => {
     const [isEditing, setIsEditing] = useState(false);
@@ -137,7 +138,7 @@ const Account = () => {
                 buttonLabel="Save details"
                 />
             }
-
+           <Alert type="success" message="Your chnages have been saved successfully"></Alert>
         </section>
     </div>
   )
