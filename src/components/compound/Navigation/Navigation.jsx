@@ -41,14 +41,18 @@ const Navigation = () => {
               {
                 !isLoggedIn ?
                 <div className={styles.loginAndSignUp}>
-                  <span>
-                    <img src={SignupIcon}/>
-                    <p>Sign up</p>
-                  </span>
-                  <span style={{border:'1px solid #E9BA67', borderRadius:'8px'}}>
-                    <img src={LogoutIcon}/>
-                    <p>Log in</p>
-                  </span>
+                  <Link to="/signup">
+                    <span>
+                      <img src={SignupIcon}/>
+                      <p style={{color:'white'}}>Sign up</p>
+                    </span>
+                  </Link>
+                  <Link to="/login">
+                    <span style={{border:'1px solid #E9BA67', borderRadius:'8px'}}>
+                      <img src={LogoutIcon}/>
+                      <p style={{color:'white'}}>Log in</p>
+                    </span>
+                  </Link>
                 </div>
                 :(
                   <img src={Avatar}/>
