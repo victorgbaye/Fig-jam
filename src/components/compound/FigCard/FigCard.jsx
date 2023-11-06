@@ -42,7 +42,7 @@ export const FigElementCard = ({title, paid}) => {
             }
             {
               showError &&
-           <Alert message="Your Account currently has no active payement">Update Payment</Alert>
+           <Alert type='neutral' message="Your Account currently has no active payement">Update Payment</Alert>
             }
         </span>
       </div>

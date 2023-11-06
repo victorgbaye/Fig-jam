@@ -30,6 +30,17 @@
     // position: relative;
     
 }
+.loginAndSignUp{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    span{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+    }
+}
 .userSec{
 }
 .navDropdown{

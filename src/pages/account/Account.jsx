@@ -1,7 +1,7 @@
 // import Input from "../../components/UI/input/Input"
 import { useState } from "react";
 
-import { AccountInput } from '../../components/UI/input/Input'
+import Input, { AccountInput } from '../../components/UI/input/Input'
 import styles from './Account.module.scss'
 import trash from '../../assets/trash.svg'
 import edit from '../../assets/edit.svg'
@@ -10,6 +10,7 @@ import Save from '../../assets/Save.svg'
 import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
 import Modal from '../../components/compound/modal/Modal'
 import Alert from "../../components/compound/Alert/Alert";
+import PinForm from "../../components/compound/PinForm/PinForm";
 
 const Account = () => {
     const [isEditing, setIsEditing] = useState(false);
@@ -105,7 +106,9 @@ const Account = () => {
             prompt="Enter the code sent to your email to edit account."
             buttonLabel="Continue"
             onConfirm={handleEditConfirm}
-            />
+            >
+                <PinForm/>
+            </Modal>
             }
             {
                 deleteModalOpen &&
@@ -126,7 +129,11 @@ const Account = () => {
                 prompt="Enter your password to save details."
                 buttonLabel="Continue"
                 onConfirm={handleSavedChanges}
-                />
+                >
+                <Input
+                placeholder="Password"
+                />  
+                </Modal>   
             }
             {
                 editCardDetailsModalOpen &&
@@ -136,7 +143,12 @@ const Account = () => {
                 closeModal={closeModal}
                 prompt="Enter your password to save details."
                 buttonLabel="Save details"
-                />
+                >
+                 <Input
+                 placeholder="Password"
+                 />  
+                 hello world 
+                 </Modal>   
             }
            <Alert type="success" message="Your chnages have been saved successfully"></Alert>
         </section>

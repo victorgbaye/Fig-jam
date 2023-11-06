@@ -4,7 +4,7 @@ import Button from '../../UI/button/Button'
 import PropTypes from 'prop-types';
 // import { useState } from "react";
 
-const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm}) => {
+const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm, children}) => {
 
   // const handleConfirmClick = () => {
   //   onConfirm();
@@ -19,6 +19,10 @@ const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm}
             </header>
             <div className={styles.ModalBody}>
               <p>{prompt}</p>
+              
+            </div>
+            <div className={styles.ModalBody}>
+            {children}
             </div>
             <div className={styles.ModalFooter}>
               <Button 
@@ -44,6 +48,7 @@ Modal.propTypes = {
   confirmColor: PropTypes.string.isRequired,
   buttonLabel: PropTypes.string.isRequired,
   onConfirm: PropTypes.func,
+  children: PropTypes.node,
 
 }
 
