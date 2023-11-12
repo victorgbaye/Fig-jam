@@ -17,7 +17,7 @@ const Account = () => {
     const [editModalOpen, setEditModalOpen] = useState(false);
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [saveDetailsModalOpen, setSaveDetailsEditModalOpen] = useState(false);
-    const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(false);
+    const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(true);
 
     const closeModal = () => {
         setSaveDetailsEditModalOpen(false)
@@ -77,10 +77,18 @@ const Account = () => {
             label="Email"
             readOnly={!isEditing}
             />
-            <AccountInput
-            label="Password"
-            readOnly={!isEditing}
-            />
+            <div style={{position:'relative',}}> 
+                <AccountInput
+                type="password"
+                label="Password"
+                readOnly={!isEditing}
+                style={{paddingBottom: isEditing && '30px'}}
+                />
+                {
+                    isEditing &&
+                <p style={{position:'absolute', bottom:'28px', left:'20px', fontSize:'14px', textDecoration:'underline'}}>change password</p>
+                }
+            </div>
              <div className={styles.AccountDetailsFlex}>
                 <AccountInput
                 label="Subscription"
