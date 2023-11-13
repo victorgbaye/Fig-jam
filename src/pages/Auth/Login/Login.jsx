@@ -1,10 +1,13 @@
 import Button from "../../../components/UI/button/Button"
 import Input from "../../../components/UI/input/Input"
+import { useGlobalContext } from "../../../context"
 import styles from './Login.module.scss'
 
 const Login = () => {
+  const {theme} = useGlobalContext()
+
   return (
-    <div className={styles.LoginContainer}>
+    <div className={`${styles.LoginContainer} ${styles[theme]}`}>
         <h4>Log in</h4>
         <div className={styles.LoginInputContainer}>
             <Input

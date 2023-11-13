@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import styles from './Input.module.scss'
+import { useGlobalContext } from '../../../context';
 const Input = ({ label, type, placeholder, value, onChange, style }) => {
   return (
     <div>
@@ -26,8 +27,10 @@ Input.propTypes = {
 
 
 export const AccountInput = ({label, style, readOnly}) =>{
+  const {theme} = useGlobalContext()
+
     return(
-        <div className={styles.AccountInputContainer}>
+        <div className={`${styles.AccountInputContainer} ${styles[theme]}`}>
             <label>{label}</label>
             <input
              className={styles.AccountInput}

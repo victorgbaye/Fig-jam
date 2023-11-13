@@ -5,6 +5,8 @@ import Input, { AccountInput } from '../../components/UI/input/Input'
 import styles from './Account.module.scss'
 import trash from '../../assets/trash.svg'
 import edit from '../../assets/edit.svg'
+import darkEdit from '../../assets/darkEdit.svg'
+
 import Save from '../../assets/Save.svg'
 
 import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
@@ -56,19 +58,19 @@ const Account = () => {
             </div> 
             :
             (<>
-                <div className={styles.editButton} onClick={()=>setEditModalOpen(true)}>
-                    <img src={edit}/>
-                    <p>Edit</p>
+                <div className={styles.editButton} onClick={()=>setEditModalOpen(true)} style={{background:theme == 'light'? '#222' : '#FFF'}}>
+                    <img src={theme =='light'? edit : darkEdit}/>
+                    <p style={{color:theme == 'dark'? '#222' : '#FFF'}}>Edit</p>
                 </div>
                 <div className={styles.deleteButton} onClick={()=>setDeleteModalOpen(true)}>
                     <img src={trash}/>
-                    <p>Delete Account</p>
+                    <p style={{color:theme == 'light'? '#222' : '#FFF'}}>Delete Account</p>
                 </div>
             </>)
             }
             
         </section>
-        <main className={styles.AccountDetailsContainer}>
+        <main  className={`${styles.AccountDetailsContainer} ${styles[theme]}`}>
             <div className={styles.AccountDetailsFlex}>
                 <AccountInput
                 label="First Name"
@@ -139,7 +141,7 @@ const Account = () => {
                 saveDetailsModalOpen &&
                 <Modal
                 title="Save details"
-                confirmColor="#222"
+                confirmColor={theme == 'light'? '#333' : '#F5F5F5'}
                 closeModal={closeModal}
                 prompt="Enter your password to save details."
                 buttonLabel="Continue"
@@ -154,7 +156,7 @@ const Account = () => {
                 editCardDetailsModalOpen &&
                 <Modal
                 title="Card details"
-                confirmColor="#222"
+                confirmColor={theme == 'light'? '#333' : '#F5F5F5'}
                 closeModal={closeModal}
                 prompt="Enter your password to save details."
                 buttonLabel="Save details"
@@ -182,7 +184,7 @@ const Account = () => {
                 updatePasswordModalOpen &&
                 <Modal
                 title="Change Password"
-                confirmColor="#222"
+                confirmColor={theme == 'light'? '#333' : '#F5F5F5'}
                 closeModal={closeModal}
                 // prompt="Enter your password to save details."
                 buttonLabel="update"

@@ -34,7 +34,7 @@ const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm,
               <Button 
               onClick={onConfirm}
               label={buttonLabel}
-              style={{padding:'12px 20px', width:'auto', background: confirmColor, border:'none', outline:'none', color:`${theme =='light' ? '#FFF' : '#1A1A1A'}`}}
+              style={{padding:'12px 20px', width:'auto', background: confirmColor, border:'none', outline:'none', color:`${theme =='light' ? '#FFF' : theme =='dark' ? '#1A1A1A' : ''}`}}
               />
               <Button
               label='Cancel'

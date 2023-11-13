@@ -39,7 +39,7 @@ const Navigation = () => {
     <div >
         <nav className={styles.nav} >
             <Link to="/">
-              <span style={{color:'white'}}>FIG PLUG</span>
+              <span style={{color:'#F5F5F5'}}>FIG PLUG</span>
             </Link>
             <div className={styles.userSec} onClick={onToggleDropdown}ref={dropdownRef}>
               <div onClick={toggleTheme} style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'8px'}}>
@@ -52,13 +52,13 @@ const Navigation = () => {
                   <Link to="/signup">
                     <span>
                       <img src={SignupIcon}/>
-                      <p style={{color:'white'}}>Sign up</p>
+                      <p style={{color:'#F5F5F5'}}>Sign up</p>
                     </span>
                   </Link>
                   <Link to="/login">
                     <span style={{border:'1px solid #E9BA67', borderRadius:'8px'}}>
                       <img src={LogoutIcon}/>
-                      <p style={{color:'white'}}>Log in</p>
+                      <p style={{color:'#F5F5F5'}}>Log in</p>
                     </span>
                   </Link>
                 </div>

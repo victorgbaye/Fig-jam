@@ -7,6 +7,7 @@
     padding: 40px;
 
 }
+
 .HeroContainer{
     // border: 1px solid red;
     margin: 0 auto;
@@ -75,10 +76,13 @@
     }
 }
 .dark{
-    background-color: #1A1A1A;
+    // background-color: #1A1A1A;
     .SearchContainer{
         background-color: #2C2C2C;
         border: 1px solid #555;
+        input{
+            color: white
+        }
     }
 }
 .cardGrid{

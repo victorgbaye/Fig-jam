@@ -1,3 +1,5 @@
+
+
 .DefaultInputStyles{
     outline: none;
     padding: 8px 16px;
@@ -18,7 +20,6 @@
 
 
 .AccountInputContainer{
-    border-bottom: 1px solid #EDEBE7;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -34,8 +35,23 @@
         font-weight: 400;
     }
 }
+.light{
+    border-bottom: 1px solid #EDEBE7;
+
+}
+.dark{
+    border-bottom: 1px solid #555;
+
+    label{
+        color: #D1D1D1;
+    }
+    input{
+        color: white;
+    }
+}
 .AccountInput{
    outline: none;
    border: none;
    width: 100%;
+   background: transparent;
 }

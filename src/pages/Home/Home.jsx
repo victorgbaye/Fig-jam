@@ -1,5 +1,6 @@
 import HeroIcon from '../../assets/HeroIcon.svg'
 import Search from '../../assets/Search.svg'
+import darkSearch from '../../assets/darkSearch.svg'
 
 import { FigCard } from '../../components/compound/FigCard/FigCard'
 import Navigation from '../../components/compound/Navigation/Navigation'
@@ -10,7 +11,7 @@ const Home = () => {
 
   return (
     <div >
-        <header className={`${styles.header} ${styles[theme]}`}>
+        <header className={`${styles.header} ${styles[theme]}`} style={{backgroundColor: theme == 'light'? '' : '#1a1a1a'}}>
              <Navigation/>
             <section className={styles.HeroContainer}>
                 <p>Copy & Paste <span>UI elements & Graphics</span> to your figma</p>
@@ -23,7 +24,7 @@ const Home = () => {
             <p>Empty graphics</p>
           </div>
           <div  className={styles.SearchContainer} >
-          <img src={Search}/>
+          <img src={theme =='light' ? Search : darkSearch} />
             <input placeholder='Search'/>
           </div>
         </section>
