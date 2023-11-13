@@ -11,6 +11,8 @@ import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
 import Modal from '../../components/compound/modal/Modal'
 import Alert from "../../components/compound/Alert/Alert";
 import PinForm from "../../components/compound/PinForm/PinForm";
+import {useGlobalContext} from '../../context'
+
 
 const Account = () => {
     const [isEditing, setIsEditing] = useState(false);
@@ -20,6 +22,7 @@ const Account = () => {
     const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(false);
     const [updatePasswordModalOpen, setUpdatePasswordModalOpen] = useState(false);
 
+    const {theme} = useGlobalContext()
 
     const closeModal = () => {
         setSaveDetailsEditModalOpen(false)
@@ -112,7 +115,7 @@ const Account = () => {
             editModalOpen &&
             <Modal
             title="Edit"
-            confirmColor="#222"
+            confirmColor={theme == 'light'? '#333' : '#F5F5F5'}
             closeModal={closeModal}
             prompt="Enter the code sent to your email to edit account."
             buttonLabel="Continue"
@@ -121,6 +124,7 @@ const Account = () => {
                 <PinForm/>
             </Modal>
             }
+            
             {
                 deleteModalOpen &&
                 <Modal
