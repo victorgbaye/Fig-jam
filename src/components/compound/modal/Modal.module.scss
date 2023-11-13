@@ -17,7 +17,27 @@
     border-radius: 12px;
     width: 400px;
   }
+.light{
 
+}
+.dark{
+    background-color: #1A1A1A;
+    border: 1px solid  #333;
+    .ModalHeader{
+        h6{
+            color: #F5F5F5;
+        }
+        img{
+            background:#333 ;
+        }
+    }
+    .ModalBody{
+        p{
+            color: #CCC;
+        }
+    }
+
+}
 .ModalHeader{
     display: flex;
     align-items: flex-start;

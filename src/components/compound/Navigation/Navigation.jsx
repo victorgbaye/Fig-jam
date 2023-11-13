@@ -4,10 +4,14 @@ import logout from '../../../assets/logout.svg'
 import Avatar from '../../../assets/Avatar.svg'
 import SignupIcon from '../../../assets/SignupIcon.svg'
 import LogoutIcon from '../../../assets/LogoutIcon.svg'
+import darkToggle from '../../../assets/darkToggle.svg'
+import Toggle from '../../../assets/Toggle.svg'
+import {useGlobalContext} from '../../../context'
 import { useState,useEffect, useRef  } from 'react'
 import { Link } from 'react-router-dom'
 
 const Navigation = () => {
+  const {theme, toggleTheme} = useGlobalContext()
     const [toggleDropdown, setToggleDropdown] = useState(false);
     const [isLoggedIn] = useState(false);
 
@@ -38,6 +42,10 @@ const Navigation = () => {
               <span style={{color:'white'}}>FIG PLUG</span>
             </Link>
             <div className={styles.userSec} onClick={onToggleDropdown}ref={dropdownRef}>
+              <div onClick={toggleTheme} style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'8px'}}>
+              <img src={theme == 'light'? Toggle: darkToggle}/>
+              <span>{theme == 'light'? 'Light Mode': 'Dark Mode'}</span>
+              </div>
               {
                 !isLoggedIn ?
                 <div className={styles.loginAndSignUp}>

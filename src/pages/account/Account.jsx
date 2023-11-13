@@ -17,13 +17,16 @@ const Account = () => {
     const [editModalOpen, setEditModalOpen] = useState(false);
     const [deleteModalOpen, setDeleteModalOpen] = useState(false);
     const [saveDetailsModalOpen, setSaveDetailsEditModalOpen] = useState(false);
-    const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(true);
+    const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(false);
+    const [updatePasswordModalOpen, setUpdatePasswordModalOpen] = useState(false);
+
 
     const closeModal = () => {
         setSaveDetailsEditModalOpen(false)
         setEditModalOpen(false);
         setDeleteModalOpen(false)
         setEditCardDetailsModalOpen(false)
+        setUpdatePasswordModalOpen(false)
         
       };
       const handleEditConfirm =() =>{
@@ -86,7 +89,7 @@ const Account = () => {
                 />
                 {
                     isEditing &&
-                <p style={{position:'absolute', bottom:'28px', left:'20px', fontSize:'14px', textDecoration:'underline'}}>change password</p>
+                <p style={{position:'absolute', bottom:'28px', left:'20px', fontSize:'14px', textDecoration:'underline'}} onClick={()=>setUpdatePasswordModalOpen(true)}>change password</p>
                 }
             </div>
              <div className={styles.AccountDetailsFlex}>
@@ -152,10 +155,46 @@ const Account = () => {
                 prompt="Enter your password to save details."
                 buttonLabel="Save details"
                 >
-                 <Input
-                 placeholder="Password"
-                 />  
-                 hello world 
+                <div style={{display:'flex',flexDirection:'column', gap:'20px'}}>
+
+                    <Input
+                    placeholder="John Doe"
+                    /> 
+                    <Input
+                    placeholder="1234 5678 9101 1213"
+                    /> 
+                    <div style={{display:'flex', gap:'20px'}}> 
+                    <Input
+                    placeholder="10/24"
+                    />
+                    <Input
+                    placeholder="678"
+                    /> 
+                    </div>
+                </div>
+                 </Modal>   
+            }
+                        {
+                updatePasswordModalOpen &&
+                <Modal
+                title="Change Password"
+                confirmColor="#222"
+                closeModal={closeModal}
+                // prompt="Enter your password to save details."
+                buttonLabel="update"
+                >
+                <div style={{display:'flex',flexDirection:'column', gap:'20px'}}>
+
+                    <Input
+                    placeholder="Old password"
+                    /> 
+                    <Input
+                    placeholder="New password"
+                    /> 
+                    <Input
+                    placeholder="Retype new password"
+                    /> 
+                </div>
                  </Modal>   
             }
            <Alert type="success" message="Your chnages have been saved successfully"></Alert>
