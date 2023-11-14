@@ -7,7 +7,9 @@ const Login = () => {
   const {theme} = useGlobalContext()
 
   return (
-    <div className={`${styles.LoginContainer} ${styles[theme]}`}>
+    <div style={{background:theme, height:'100vh'}}>
+      <div className={`${styles.LoginContainer} ${styles[theme]}`}>
+
         <h4>Log in</h4>
         <div className={styles.LoginInputContainer}>
             <Input
@@ -26,6 +28,7 @@ const Login = () => {
         style={{height:'46px'}}
         />
         <p>Dont have an account? <span>Sign Up</span></p>
+      </div>
 
     </div>
   )

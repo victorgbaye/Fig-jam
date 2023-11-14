@@ -8,13 +8,18 @@ import darkToggle from '../../../assets/darkToggle.svg'
 import Toggle from '../../../assets/Toggle.svg'
 import {useGlobalContext} from '../../../context'
 import { useState,useEffect, useRef  } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navigation = () => {
   const {theme, toggleTheme} = useGlobalContext()
     const [toggleDropdown, setToggleDropdown] = useState(false);
     const [isLoggedIn] = useState(false);
 
+    const location = useLocation();
+
+    const isHomePage = location.pathname === '/';
+    const getTextColor = isHomePage ? '#F5F5F5' : '#FFF'; // Change colors based on the page
+    
     const dropdownRef = useRef(null);
 
     const handleOutsideClick = (event) => {
@@ -38,10 +43,17 @@ const Navigation = () => {
   return (
     <div >
         <nav className={styles.nav} >
+            <div className={styles.navBreadCrumb}>
             <Link to="/">
-              <span style={{color:'#F5F5F5'}}>FIG PLUG</span>
+              <span style={{color:isHomePage? '#F5F5F5': !isHomePage ? '#CCC' : ''}}>FIG PLUG </span>
             </Link>
-            <div className={styles.userSec} onClick={onToggleDropdown}ref={dropdownRef}>
+            {!isHomePage && (
+        <p style={{ color: getTextColor }}>
+           / {location.pathname.slice(1).charAt(0).toUpperCase() + location.pathname.slice(2)}
+        </p>
+      )}
+            </div>
+            <div className={styles.userSec} >
               <div onClick={toggleTheme} style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'8px'}}>
               <img src={theme == 'light'? Toggle: darkToggle}/>
               <span>{theme == 'light'? 'Light Mode': 'Dark Mode'}</span>
@@ -63,7 +75,7 @@ const Navigation = () => {
                   </Link>
                 </div>
                 :(
-                  <img src={Avatar}/>
+                  <img src={Avatar} onClick={onToggleDropdown}ref={dropdownRef}/>
                 )
               }
             {

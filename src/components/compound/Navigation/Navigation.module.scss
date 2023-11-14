@@ -1,6 +1,13 @@
 .navWrapper{
     
 }
+.navBreadCrumb{
+    display: flex;
+    align-items: center;
+    p{
+        
+    }
+}
 .navigationContainer{
     padding: 40px;
     background-color:#222;
@@ -43,6 +50,7 @@
 }
 .userSec{
     display: flex;
+    gap: 20px;
 }
 .navDropdown{
     position: absolute;

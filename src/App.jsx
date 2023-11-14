@@ -15,7 +15,7 @@ import Home from './pages/Home/Home'
 function App() {
   const {theme, toggleTheme} = useGlobalContext()
 
-
+  // className={`App ${theme}`}
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <div className='App' id={theme}>
