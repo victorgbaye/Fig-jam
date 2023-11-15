@@ -2,15 +2,17 @@ import PropTypes from 'prop-types';
 import styles from './Input.module.scss'
 import { useGlobalContext } from '../../../context';
 const Input = ({ label, type, placeholder, value, onChange, style }) => {
+  const {theme} = useGlobalContext()
+
   return (
-    <div>
+    <div className={styles.Input}>
         <label>{label}</label>
         <input
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={styles.DefaultInputStyles}
+        className={`${styles.DefaultInputStyles} ${styles[theme]}`}
         style={style}
     />
     </div>

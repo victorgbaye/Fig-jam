@@ -1,11 +1,17 @@
 // import HeroIcon from '../../assets/HeroIcon.svg'
 import Search from '../../assets/Search.svg'
+import darkSearch from '../../assets/darkSearch.svg'
+
 import Back from '../../assets/arrow-left-line.svg'
+import darkBack from '../../assets/darkBack.svg'
 import { FigElementCard } from '../../components/compound/FigCard/FigCard'
 // import Navigation from '../../components/compound/Navigation/Navigation'
 import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
+import { useGlobalContext } from '../../context'
 import styles from './CategoryElements.module.scss'
+import { Link } from 'react-router-dom'
 const CategoryElements = () => {
+  const {theme} = useGlobalContext()
   return (
     <div>
         <PageBanner
@@ -17,13 +23,17 @@ const CategoryElements = () => {
                <img src={HeroIcon}/>
             </section>
         </header> */}
-        <section className={styles.searchAndFilterContainer}>
+        
+        <section className={`${styles.searchAndFilterContainer} ${styles[theme]}`}>
+         
           <div className={styles.Back}>
-            <img src={Back}/>
+            <Link to='/'>
+              <img src={theme == 'dark' ? darkBack : Back} style={{background: theme == 'dark' ? '#2C2C2C' : '#FFF'}}/>
+            </Link>
             <p>Back</p>
           </div>
           <div  className={styles.SearchContainer}>
-          <img src={Search}/>
+          <img src={theme =='light' ? Search : darkSearch}/>
             <input placeholder='Search'/>
           </div>
         </section>

@@ -8,23 +8,31 @@
     // background: #F2F2F2;
 }
 
- .light{
-    background: #F2F2F2;
-}
-.dark{
-    background-color: #333;
-    .componentName{
-        color: #F5F5F5;
-    }
-    .componentLength{
-        color: #CCC;
-    }
-}
+//  .light{
+//     background: #F2F2F2;
+// }
+// .dark{
+//     background-color: #333;
+//     .componentName{
+//         color: #F5F5F5;
+//     }
+//     .componentLength{
+//         color: #CCC;
+//     }
+// }
 .componentThumbnail{
     width: 100%;
     height: 160px;
-    background-color: #F2F2F2;
+    background-color: black;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        height: 100%;
+        width: 50%;
+       
+    }
 }
 .cardDetails{
     width: 100%;
@@ -46,6 +54,9 @@
         border-radius: 8px;
         border: 1px solid #E9BA67;
         background: #FFF;
+    }
+    span:hover{
+        background: linear-gradient(91deg, #DCAC58 22.54%, #E38C6B 47.83%, #DB7C9A 55.52%, #D27DA7 74.48%);
     }
 
 }

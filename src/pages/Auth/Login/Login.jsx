@@ -25,7 +25,7 @@ const Login = () => {
         </div>
         <Button
         label="Log in"
-        style={{height:'46px'}}
+        style={{height:'46px', background: theme == 'dark' ? '#FFF': '', color: theme == 'dark' ? '#222' : ''}}
         />
         <p>Dont have an account? <span>Sign Up</span></p>
       </div>

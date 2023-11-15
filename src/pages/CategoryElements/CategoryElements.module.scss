@@ -1,3 +1,5 @@
+
+
 .HeroContainer{
     // border: 1px solid red;
     background-color:#222;
@@ -42,7 +44,7 @@
             padding: 8px;
             background: white;
             border-radius: 8px;
-            border: 1px solid #E3E3E3;
+            // border: 1px solid #E3E3E3;
 
         }
 
@@ -64,6 +66,16 @@
             outline: none;
             border: none;
             background: none;
+        }
+    }
+}
+.dark{
+    // background-color: #1A1A1A;
+    .SearchContainer{
+        background-color: #2C2C2C;
+        border: 1px solid #555;
+        input{
+            color: white
         }
     }
 }

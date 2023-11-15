@@ -14,14 +14,15 @@
 }
 
 .light{
-  background-color: #F7F7F7;
+  background-color: #F2F2F2;
   height: 100%;
 
 }
 
-#dark {
+.dark {
   height: 100%;
   background-color: #1A1A1A;
+  color: #FFF;
 }
 .logo {
   height: 6em;
