@@ -14,6 +14,7 @@ import Modal from '../../components/compound/modal/Modal'
 import Alert from "../../components/compound/Alert/Alert";
 import PinForm from "../../components/compound/PinForm/PinForm";
 import {useGlobalContext} from '../../context'
+import Footer from "../../components/compound/Footer/Footer";
 
 
 const Account = () => {
@@ -44,7 +45,7 @@ const Account = () => {
         closeModal()
       }
   return (
-    <div>
+    <div style={{position:'relative'}}>
         <PageBanner
         title='Account'
         />
@@ -205,6 +206,7 @@ const Account = () => {
             }
            <Alert type="success" message="Your chnages have been saved successfully"></Alert>
         </section>
+        <Footer/>
     </div>
   )
 }

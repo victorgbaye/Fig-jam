@@ -18,7 +18,7 @@ export const FigCard = () => {
 
   return (
     <div className={`${styles.figCardContainer} `} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
-      <div className={styles.componentThumbnail}style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F2F2F2'}}>
+      <div className={styles.componentThumbnail}style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F5F5F5'}}>
       <img src={CategoryThumbnail}/>
       </div>
       <div className={`${styles.cardDetails} ${styles[theme]}`}>

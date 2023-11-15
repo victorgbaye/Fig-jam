@@ -33,7 +33,6 @@ function App() {
         {/* <Login/> */}
         {/* <Signup/> */}
         {/* <Account/> */}
-
       </div>
     </ThemeContext.Provider>
 

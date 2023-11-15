@@ -6,11 +6,12 @@ import { FigCard } from '../../components/compound/FigCard/FigCard'
 import Navigation from '../../components/compound/Navigation/Navigation'
 import styles from './Home.module.scss'
 import {useGlobalContext} from '../../context'
+import Footer from '../../components/compound/Footer/Footer'
 const Home = () => {
   const {theme} = useGlobalContext()
 
   return (
-    <div >
+    <div  style={{position:'relative'}}>
         <header className={`${styles.header} ${styles[theme]}`} style={{backgroundColor: theme == 'light'? '' : '#1a1a1a'}}>
              <Navigation/>
             <section className={styles.HeroContainer}>
@@ -38,6 +39,9 @@ const Home = () => {
             <FigCard/>
             <FigCard/>
         </section>
+        <div>
+          <Footer/>
+        </div>
     </div>
   )
 }
