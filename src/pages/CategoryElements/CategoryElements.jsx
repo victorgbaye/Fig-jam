@@ -10,10 +10,11 @@ import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
 import { useGlobalContext } from '../../context'
 import styles from './CategoryElements.module.scss'
 import { Link } from 'react-router-dom'
+import Footer from '../../components/compound/Footer/Footer'
 const CategoryElements = () => {
   const {theme} = useGlobalContext()
   return (
-    <div>
+    <div style={{position:'relative'}}>
         <PageBanner
         title='Responsive Navigation Bar'
         />
@@ -71,6 +72,7 @@ const CategoryElements = () => {
             paid={false}
             />
         </section>
+        <Footer/>
     </div>
   )
 }

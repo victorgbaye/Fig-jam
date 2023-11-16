@@ -1,13 +1,17 @@
-
+.footerWrapper{
+    position: fixed;
+    bottom: 40px;
+    width: 94.5%;
+}
 .footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
+    align-self: center;
     padding: 20px;
     border-radius: 12px;
-    position: fixed;
-    bottom: 40px;
-    width: 94.5%;
+   
     .footerPages{
         display: flex;
         align-items: center;
