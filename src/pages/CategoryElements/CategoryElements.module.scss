@@ -82,8 +82,11 @@
 .cardGrid{
     padding-top: 20px;
     display: flex;
+    // flex-direction: column;
+    align-items: stretch;
     flex-wrap: wrap;
     gap: 40px;
+    flex-grow: 1;
 }
 @media (max-width: 768px) {
     .gcardGrid {
