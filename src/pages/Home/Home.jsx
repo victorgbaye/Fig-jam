@@ -38,8 +38,9 @@ const Home = () => {
             <FigCard/>
             <FigCard/>
             <FigCard/>
+            <FigCard/>
         </section>
-        <div>
+        <div style={{position:'absolute', width:'100%'}}>
           <Footer/>
         </div>
     </div>
