@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './Input.module.scss'
 import { useGlobalContext } from '../../../context';
-const Input = ({ label, type, placeholder, value, onChange, style }) => {
+const Input = ({ label, type, placeholder, value, onChange, style, name }) => {
   const {theme} = useGlobalContext()
 
   return (
@@ -14,21 +14,23 @@ const Input = ({ label, type, placeholder, value, onChange, style }) => {
         onChange={onChange}
         className={`${styles.DefaultInputStyles} ${styles[theme]}`}
         style={style}
+        name={name}
     />
     </div>
   )
 }
 Input.propTypes = {
     label: PropTypes.string,
+    name: PropTypes.string,
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onChange: PropTypes.func.isRequired,
+    onChange: PropTypes.func,
     style: PropTypes.object, 
   };
 
 
-export const AccountInput = ({label, style, readOnly}) =>{
+export const AccountInput = ({label, style, readOnly, name}) =>{
   const {theme} = useGlobalContext()
 
     return(
@@ -38,6 +40,7 @@ export const AccountInput = ({label, style, readOnly}) =>{
              className={styles.AccountInput}
              style={style}
              readOnly={readOnly}
+             name={name}
              
             />
         </div>
@@ -46,6 +49,7 @@ export const AccountInput = ({label, style, readOnly}) =>{
 
 AccountInput.propTypes = {
     label: PropTypes.string,
+    name: PropTypes.string,
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
