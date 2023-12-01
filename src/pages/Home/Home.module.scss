@@ -88,7 +88,9 @@
 .cardGrid{
     padding-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+    align-items: flex-start;
+    align-content: flex-start;
     flex-wrap: wrap;
     flex-grow: 1;
     gap: 40px;
