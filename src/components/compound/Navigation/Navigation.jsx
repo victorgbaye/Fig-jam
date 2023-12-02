@@ -1,5 +1,5 @@
 import styles from './Navigation.module.scss'
-import user from '../../../assets/user.svg'
+import userImage from '../../../assets/user.svg'
 import logout from '../../../assets/logout.svg'
 import Avatar from '../../../assets/Avatar.svg'
 import SignupIcon from '../../../assets/SignupIcon.svg'
@@ -9,11 +9,12 @@ import Toggle from '../../../assets/Toggle.svg'
 import {useGlobalContext} from '../../../context'
 import { useState,useEffect, useRef  } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Navigation = () => {
   const {theme, toggleTheme} = useGlobalContext()
     const [toggleDropdown, setToggleDropdown] = useState(false);
-    const [isLoggedIn] = useState(false);
+    // const [isLoggedIn] = useState(false);
 
     const location = useLocation();
 
@@ -21,6 +22,7 @@ const Navigation = () => {
     const getTextColor = isHomePage ? '#F5F5F5' : '#FFF'; // Change colors based on the page
     
     const dropdownRef = useRef(null);
+    const {user} = useSelector(store =>store.user)
 
     const handleOutsideClick = (event) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -59,7 +61,7 @@ const Navigation = () => {
               <span>{theme == 'light'? 'Light Mode': 'Dark Mode'}</span>
               </div>
               {
-                !isLoggedIn ?
+                !user ?
                 <div className={styles.loginAndSignUp}>
                   <Link to="/signup">
                     <span>
@@ -83,7 +85,7 @@ const Navigation = () => {
             <div className={styles.navDropdown} >
                 <Link to="/account">
                 <span >
-                    <img src={user}/>
+                    <img src={userImage}/>
                     <p>Account</p>
                 </span>
                 </Link>

@@ -15,6 +15,8 @@ import Alert from "../../components/compound/Alert/Alert";
 import PinForm from "../../components/compound/PinForm/PinForm";
 import {useGlobalContext} from '../../context'
 import Footer from "../../components/compound/Footer/Footer";
+import { useSelector, useDispatch } from "react-redux";
+// import { Value } from "sass";
 
 
 const Account = () => {
@@ -24,6 +26,17 @@ const Account = () => {
     const [saveDetailsModalOpen, setSaveDetailsEditModalOpen] = useState(false);
     const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(false);
     const [updatePasswordModalOpen, setUpdatePasswordModalOpen] = useState(false);
+    const {user, isLoading} = useSelector(store =>store.user)
+    const dispatch = useDispatch()
+
+    const [userData, setUserData] = useState({
+        firstname: user?.firstname || '',
+        lastname: user?.lastname || '',
+        email: user?.email || '',
+        password: user?.password || '',
+        subscription: user?.subscription || '',
+
+    });
 
     const {theme} = useGlobalContext()
 
@@ -44,6 +57,21 @@ const Account = () => {
         setIsEditing(!isEditing)
         closeModal()
       }
+      const handleSubmit = (e) =>{
+        e.preventDefault()
+        const {firstname, lastname, email, password, subscription} = userData;
+        if(!firstname || !lastname || !email || !password || !subscription){
+            console.log('please fill out all ');
+        }
+        setSaveDetailsEditModalOpen(true)
+      }
+
+      const handleChange = (e) =>{
+        const name = e.target.name;
+        const value = e.target.value;
+        setUserData({...userData, [name]: value})
+
+      }
   return (
     <div style={{position:'relative'}}>
         <PageBanner
@@ -53,7 +81,7 @@ const Account = () => {
     
                 {
                 isEditing ?
-            <div className={styles.editButton} onClick={()=>setSaveDetailsEditModalOpen(true)}>
+            <div className={styles.editButton} onClick={handleSubmit}>
                 <img src={Save}/>
                 <p>Save</p>
             </div> 
@@ -72,24 +100,39 @@ const Account = () => {
             
         </section>
         <main  className={`${styles.AccountDetailsContainer} ${styles[theme]}`}>
-            <div className={styles.AccountDetailsFlex}>
+            <form className={styles.AccountDetailsFlex}>
                 <AccountInput
+                type="string"
                 label="First Name"
+                name='firstname'
+                value={userData.firstname}
                 readOnly={!isEditing}
+                onChange={handleChange}
                 />
                 <AccountInput
+                type="string"
                 label="Last Name"
+                name='lastname'
+                value={userData.lastname}
                 readOnly={!isEditing}
+                onChange={handleChange}
                 />
-            </div>
+            </form>
             <AccountInput
+            type="email"
             label="Email"
+            name='email'
+            value={userData.email}
             readOnly={!isEditing}
+            onChange={handleChange}
             />
             <div style={{position:'relative',}}> 
                 <AccountInput
                 type="password"
                 label="Password"
+                name='password'
+                value={userData.password}
+                onChange={handleChange}
                 readOnly={!isEditing}
                 style={{paddingBottom: isEditing && '30px'}}
                 />
@@ -101,7 +144,9 @@ const Account = () => {
              <div className={styles.AccountDetailsFlex}>
                 <AccountInput
                 label="Subscription"
-                readOnly={!isEditing}
+                readOnly={true}
+                name='subscription'
+                value={userData.subscription}
                 />
                 <AccountInput
                 label="Status"

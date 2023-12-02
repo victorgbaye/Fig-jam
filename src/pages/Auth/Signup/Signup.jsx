@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Button from "../../../components/UI/button/Button"
 import Input from "../../../components/UI/input/Input"
 import styles from './Signup.module.scss'
 import { useGlobalContext } from "../../../context"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 // import { store } from "../../../store"
 import { registerUser } from "../../../features/user/userSlice"
@@ -15,11 +15,13 @@ const initialState = {
   password:''
 }
 const Signup = () => {
+  // const [isButtonDisabled] = useState(false);
   const {theme} = useGlobalContext()
   const [signupValues, setSignupValues] = useState(initialState);
 
   const {user, isLoading} = useSelector(store =>store.user)
   const dispatch = useDispatch()
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -35,7 +37,15 @@ const Signup = () => {
     dispatch(registerUser({firstname: firstname, lastname: lastname, email: email, password: password}))
     console.log(e.target)
   }
+  useEffect(() => {
+    if(user){
+      setTimeout(()=>{
+        navigate('/')
+      }, 2000)
+    }
 
+  }, [user])
+  
   return (
     <div style={{background:theme, height:'100vh'}}>
 
@@ -75,10 +85,11 @@ const Signup = () => {
               name='password'
               />
           <Button
-          label="Sign Up"
-          style={{height:'46px'}}
+          label={isLoading ? 'Signing up...' : 'Sign Up'}
+          style={{height:'46px', backgroundColor: isLoading && 'grey' }}
           type='submit'
-          
+          disabled={isLoading}
+         
           />
           </form>
           <p>Already have an account? <Link to='/login'><span>Log in</span></Link></p>

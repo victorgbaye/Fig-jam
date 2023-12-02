@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Button from "../../../components/UI/button/Button"
 import Input from "../../../components/UI/input/Input"
 import { useGlobalContext } from "../../../context"
 import styles from './Login.module.scss'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { loginUser } from "../../../features/user/userSlice"
 
@@ -16,6 +16,8 @@ const Login = () => {
   const [loginValues, setLoginValues] = useState(initialState);
   const {user, isLoading} = useSelector(store =>store.user)
   const dispatch = useDispatch()
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const name = e.target.name
     const value = e.target.value
@@ -32,6 +34,15 @@ const Login = () => {
     console.log(e.target)
     console.log(e.target)
   }
+
+  useEffect(() => {
+    if(user){
+      setTimeout(()=>{
+        navigate('/')
+      }, 2000)
+    }
+
+  }, [user])
   return (
     <div style={{background:theme, height:'100vh'}}>
       <div className={`${styles.LoginContainer} ${styles[theme]}`}>
@@ -55,9 +66,10 @@ const Login = () => {
             name='password'
             />
         <Button
-        label="Log in"
-        style={{height:'46px', background: theme == 'dark' ? '#FFF': '', color: theme == 'dark' ? '#222' : ''}}
+        label={isLoading ? 'Logging in...' : 'log in'}
+        style={{height:'46px', background: theme == 'dark' ? '#FFF': isLoading && 'grey' , color: theme == 'dark' ? '#222' : ''}}
         type='submit'
+        disabled={isLoading}
         />
         </form>
         <p>Dont have an account? <Link to='/signup'><span>Sign Up</span></Link></p>

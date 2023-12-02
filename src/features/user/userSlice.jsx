@@ -1,27 +1,63 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import customFetch from '../../utils/axios';
+import { addUserToLocalStorage, getUserFromLocalStorage } from '../../utils/localStorage';
 
 const initialState ={
     isLoading: false,
-    user: null
+    user: getUserFromLocalStorage()
 }
 
 export const registerUser = createAsyncThunk('user/registerUser', async(user, thunkAPI)=>
 {
     try {
         const resp = await customFetch.post('/auth/register', user)
-        console.log(resp);
+        return resp.data
     } catch (error) {
-        console.log(error.response);
+        return thunkAPI.rejectWithValue(error.response.data.msg)
     }
 })
+
+
 export const loginUser = createAsyncThunk('user/loginUser', async(user, thunkAPI)=>
 {
-    console.log(`Login User :${JSON.stringify(user)}`);
+    try {
+        const resp = await customFetch.post('/auth/login', user)
+        return resp.data
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.response.data.msg)
+
+    }
 })
 const userSlice = createSlice({
     name:'user',
-    initialState
+    initialState,
+    extraReducers:{
+        [registerUser.pending]:(state) =>{
+            state.isLoading = true
+        },
+        [registerUser.fulfilled]:(state, {payload}) =>{
+            const {user} = payload
+            state.isLoading = false
+            state.user = user
+            addUserToLocalStorage(user)
+        },
+        [registerUser.rejected]:(state) =>{
+            state.isLoading = false
+        },
+        [loginUser.pending]:(state) =>{
+            state.isLoading = true
+        },
+        [loginUser.fulfilled]:(state, {payload}) =>{
+            const {user} = payload
+            state.isLoading = false
+            state.user = user
+            addUserToLocalStorage(user)
+            console.log(`welcome back ${user.firstname}`);
+        },
+        [loginUser.rejected]:(state) =>{
+            state.isLoading = false
+        },
+    }
 })
 
 export default userSlice.reducer
