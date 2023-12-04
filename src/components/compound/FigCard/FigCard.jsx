@@ -1,16 +1,14 @@
 import { useState } from 'react';
-import styles from './FigCard.module.scss'
 import PropTypes from 'prop-types';
 import  locked from '../../../assets/locked.svg'
 import  darkLocked from '../../../assets/darkLocked.svg'
 import DesignThumbnail from '../../../assets/DesignThumbnail.svg'
 import CategoryThumbnail from '../../../assets/CategoryThumbnail.svg'
-
 import  copy from '../../../assets/copy.svg'
 import  darkCopy from '../../../assets/darkCopy.svg'
-
 import Alert from '../Alert/Alert';
 import {useGlobalContext} from '../../../context'
+import styles from './FigCard.module.scss'
 
 export const FigCard = () => {
   const {theme} = useGlobalContext()
