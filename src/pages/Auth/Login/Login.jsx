@@ -42,7 +42,7 @@ const Login = () => {
       }, 2000)
     }
 
-  }, [user])
+  }, [navigate, user])
   return (
     <div style={{background:theme, height:'100vh'}}>
       <div className={`${styles.LoginContainer} ${styles[theme]}`}>
