@@ -15,7 +15,7 @@ import Alert from "../../components/compound/Alert/Alert";
 import PinForm from "../../components/compound/PinForm/PinForm";
 import {useGlobalContext} from '../../context'
 import Footer from "../../components/compound/Footer/Footer";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 // import { Value } from "sass";
 
 
@@ -26,8 +26,8 @@ const Account = () => {
     const [saveDetailsModalOpen, setSaveDetailsEditModalOpen] = useState(false);
     const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(false);
     const [updatePasswordModalOpen, setUpdatePasswordModalOpen] = useState(false);
-    const {user, isLoading} = useSelector(store =>store.user)
-    const dispatch = useDispatch()
+    const {user} = useSelector(store =>store.user)
+    // const dispatch = useDispatch()
 
     const [userData, setUserData] = useState({
         firstname: user?.firstname || '',
