@@ -12,7 +12,6 @@ import styles from './FigCard.module.scss'
 
 export const FigCard = () => {
   const {theme} = useGlobalContext()
-  // console.log(theme);
 
   return (
     <div className={`${styles.figCardContainer} `} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
