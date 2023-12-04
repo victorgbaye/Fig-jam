@@ -36,6 +36,8 @@ const Signup = () => {
     }
     dispatch(registerUser({firstname: firstname, lastname: lastname, email: email, password: password}))
     console.log(e.target)
+    
+
   }
   useEffect(() => {
     if(user){

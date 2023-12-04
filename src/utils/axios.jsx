@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const customFetch = axios.create({
-    baseURL: 'http://localhost:5000/api/v1',
+    baseURL: 'https://fig-plug-api.onrender.com/api/v1',
+    // withCredentials: true
 })
 
 export default customFetch;
