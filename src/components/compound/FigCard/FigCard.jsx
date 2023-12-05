@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import  locked from '../../../assets/locked.svg'
-import  darkLocked from '../../../assets/darkLocked.svg'
+// import  locked from '../../../assets/locked.svg'
+// import  darkLocked from '../../../assets/darkLocked.svg'
 import DesignThumbnail from '../../../assets/DesignThumbnail.svg'
 import CategoryThumbnail from '../../../assets/CategoryThumbnail.svg'
 import  copy from '../../../assets/copy.svg'
@@ -9,6 +9,7 @@ import  darkCopy from '../../../assets/darkCopy.svg'
 import Alert from '../Alert/Alert';
 import {useGlobalContext} from '../../../context'
 import styles from './FigCard.module.scss'
+import { useSelector } from 'react-redux';
 
 export const FigCard = () => {
   const {theme} = useGlobalContext()
@@ -27,6 +28,8 @@ export const FigCard = () => {
 }
 
 export const FigElementCard = ({title, paid}) => {
+  const {user} = useSelector(store =>store.user)
+
   const {theme} = useGlobalContext()
   const [showError, setShowError] = useState(false)
   const handlePremiumError = () =>{
@@ -43,15 +46,15 @@ export const FigElementCard = ({title, paid}) => {
         <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{title}</p>
         <span onClick={handlePremiumError} style={{backgroundColor: theme == 'dark' ? '#333' : 'white', color: theme == 'dark' ? '#F5F5F5' : '#333'}}>
             {
-              paid ?
+              // paid ?
           <div className={styles.copyToFigma} >
             <img src ={theme =='light' ? copy : darkCopy}/>
-            <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>Copy to Figma</p>
-          </div> :
-         ( <div className={styles.copyToFigma} >
-            <img src ={theme == 'light' ? locked : darkLocked}/>
-            <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>Premium Subscriber</p>
-          </div>)
+            <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user.subscription == 'paid' ? 'Copy to figma' : paid && user.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
+          </div> 
+        //  ( <div className={styles.copyToFigma} >
+        //     <img src ={theme == 'light' ? locked : darkLocked}/>
+        //     <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>Premium Subscriber</p>
+        //   </div>)
             }
             {
               showError &&
