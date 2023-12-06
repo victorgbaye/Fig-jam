@@ -79,17 +79,26 @@
         }
     }
 }
+// .cardGrid{
+//     padding-top: 20px;
+//     display: flex;
+//     // flex-direction: column;
+//     align-items: stretch;
+//     flex-wrap: wrap;
+//     gap: 40px;
+//     flex-grow: 1;
+// }
 .cardGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(310px, 100%), 1fr));
+    place-items: center;
     padding-top: 20px;
-    display: flex;
-    // flex-direction: column;
-    align-items: stretch;
-    flex-wrap: wrap;
     gap: 40px;
     flex-grow: 1;
+    
 }
-@media (max-width: 768px) {
-    .gcardGrid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust column width for smaller screens */
-    }
-  }
+// @media (max-width: 768px) {
+//     .gcardGrid {
+//       grid-template-columns: repeat(auto-fill, minmax(min(310px, 100%), 1fr)); /* Adjust column width for smaller screens */
+//     }
+//   }

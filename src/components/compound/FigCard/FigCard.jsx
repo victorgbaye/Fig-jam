@@ -49,7 +49,7 @@ export const FigElementCard = ({title, paid}) => {
               // paid ?
           <div className={styles.copyToFigma} >
             <img src ={theme =='light' ? copy : darkCopy}/>
-            <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user.subscription == 'paid' ? 'Copy to figma' : paid && user.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
+            <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'paid' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
           </div> 
         //  ( <div className={styles.copyToFigma} >
         //     <img src ={theme == 'light' ? locked : darkLocked}/>

@@ -9,7 +9,8 @@ import Toggle from '../../../assets/Toggle.svg'
 import {useGlobalContext} from '../../../context'
 import { useState,useEffect, useRef  } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { logoutUser } from '../../../features/user/userSlice'
 
 const Navigation = () => {
   const {theme, toggleTheme} = useGlobalContext()
@@ -23,6 +24,7 @@ const Navigation = () => {
     
     const dropdownRef = useRef(null);
     const {user} = useSelector(store =>store.user)
+    const dispatch = useDispatch()
 
     const handleOutsideClick = (event) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -41,6 +43,11 @@ const Navigation = () => {
 
     const onToggleDropdown = () =>{
         setToggleDropdown(!toggleDropdown)
+    }
+    const handleLogout = () =>{
+      setToggleDropdown(false)
+      dispatch(logoutUser())
+
     }
   return (
     <div >
@@ -89,7 +96,7 @@ const Navigation = () => {
                     <p>Account</p>
                 </span>
                 </Link>
-                <span>
+                <span onClick={handleLogout}>
                     <img src={logout}/>
                     <p>Log Out</p>
                 </span>
