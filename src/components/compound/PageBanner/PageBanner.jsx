@@ -3,15 +3,13 @@ import styles from './PageBanner.module.scss'
 import Cursor from '../../../assets/Cursor.svg'
 import Navigation from '../Navigation/Navigation';
 import {useGlobalContext} from '../../../context'
+
 export const PageBanner = ({ title }) => {
   const {theme} = useGlobalContext()
 
   return (
     <div>
         <header className={`${styles.BannerWrapper} ${styles[theme]}`}>
-          <div style={{display:'none'}}>
-            <Navigation/>
-          </div>
           <Navigation/>
       <section className={styles.HeroContainer}>
         <p>

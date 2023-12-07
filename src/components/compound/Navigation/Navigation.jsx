@@ -45,19 +45,19 @@ const Navigation = () => {
         };
         
 
-      }, []);
+      }, );
       
       
       const onToggleDropdown = () =>{
         setToggleDropdown(!toggleDropdown)
+
       }
 
       const handleLogout = () =>{
-        // setToggleDropdown(false)
+        setToggleDropdown(false)
         dispatch(logoutUser())
         setIsLogoutSucessful(true)
         navigate('/')
-        console.log('eco');
   
       }
       return (
@@ -102,7 +102,7 @@ const Navigation = () => {
             toggleDropdown &&
             <div className={styles.navDropdown} >
                 <Link to="/account">
-                <span >
+                <span>
                     <img src={userImage}/>
                     <p>Account</p>
                 </span>

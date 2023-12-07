@@ -6,7 +6,6 @@ import styles from './Login.module.scss'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { loginUser } from "../../../features/user/userSlice"
-import { PageBanner } from "../../../components/compound/PageBanner/PageBanner"
 
 const initialState = {
   email:'',
@@ -46,7 +45,6 @@ const Login = () => {
   }, [navigate, user])
   return (
     <div style={{background:theme, height:'100vh'}}>
-      <PageBanner/>
       <div className={`${styles.LoginContainer} ${styles[theme]}`}>
 
         <h4>Log in</h4>
