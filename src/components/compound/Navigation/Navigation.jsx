@@ -19,7 +19,6 @@ const Navigation = () => {
     const [toggleDropdown, setToggleDropdown] = useState(false);
     const [isLogoutSucessful, setIsLogoutSucessful] = useState(false);
 
-    // const [isLoggedIn] = useState(false);
 
     const location = useLocation();
 
