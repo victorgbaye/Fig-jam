@@ -1,3 +1,4 @@
+import styles from './FigCard.module.scss'
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 // import  locked from '../../../assets/locked.svg'
@@ -8,7 +9,6 @@ import  copy from '../../../assets/copy.svg'
 import  darkCopy from '../../../assets/darkCopy.svg'
 import Alert from '../Alert/Alert';
 import {useGlobalContext} from '../../../context'
-import styles from './FigCard.module.scss'
 import { useSelector } from 'react-redux';
 
 export const FigCard = () => {
