@@ -11,10 +11,13 @@ import { useState,useEffect, useRef  } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logoutUser } from '../../../features/user/userSlice'
+import Alert from '../Alert/Alert'
 
 const Navigation = () => {
   const {theme, toggleTheme} = useGlobalContext()
     const [toggleDropdown, setToggleDropdown] = useState(false);
+    const [isLogoutSucessful, setIsLogoutSucessful] = useState(false);
+
     // const [isLoggedIn] = useState(false);
 
     const location = useLocation();
@@ -47,6 +50,7 @@ const Navigation = () => {
     const handleLogout = () =>{
       setToggleDropdown(false)
       dispatch(logoutUser())
+      setIsLogoutSucessful(true)
 
     }
   return (
@@ -104,6 +108,10 @@ const Navigation = () => {
             }
             </div>
         </nav>
+        {
+        isLogoutSucessful &&
+        <Alert type='success' message='logout sucessful'/>
+        }
     </div>
   )
 }

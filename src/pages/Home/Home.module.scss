@@ -87,14 +87,19 @@
 }
 .cardGrid{
     padding-top: 20px;
-    display: flex;
-    // justify-content: space-evenly;
-    align-items: flex-start;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    gap: 40px;
+    // display: flex;
+    // // justify-content: space-evenly;
+    // align-items: flex-start;
+    // align-content: flex-start;
+    // flex-wrap: wrap;
+    // flex-grow: 1;
+    // gap: 40px;
     // margin: 0 auto;
+    display: grid;
+    // grid-template-columns: repeat(auto-fill, minmax(calc(25% - 20px), 1fr)); /* Four items per row */
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); /* Four items per row */
+    padding-top: 20px;
+    gap: 20px; 
 }
 @media (max-width: 768px) {
     .gcardGrid {
