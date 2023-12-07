@@ -16,6 +16,7 @@ import PinForm from "../../components/compound/PinForm/PinForm";
 import {useGlobalContext} from '../../context'
 import Footer from "../../components/compound/Footer/Footer";
 import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 // import { Value } from "sass";
 
 
@@ -27,8 +28,8 @@ const Account = () => {
     const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(false);
     const [updatePasswordModalOpen, setUpdatePasswordModalOpen] = useState(false);
     const {user} = useSelector(store =>store.user)
-    // const dispatch = useDispatch()
 
+    // const dispatch = useDispatch()
     const [userData, setUserData] = useState({
         firstname: user?.firstname || '',
         lastname: user?.lastname || '',
@@ -72,6 +73,9 @@ const Account = () => {
         setUserData({...userData, [name]: value})
 
       }
+      if (!user) {
+        return <Navigate to='/'/>
+    }
   return (
     <div style={{position:'relative'}}>
         <PageBanner
