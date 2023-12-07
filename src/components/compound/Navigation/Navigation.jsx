@@ -8,12 +8,13 @@ import darkToggle from '../../../assets/darkToggle.svg'
 import Toggle from '../../../assets/Toggle.svg'
 import {useGlobalContext} from '../../../context'
 import { useState,useEffect, useRef  } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logoutUser } from '../../../features/user/userSlice'
 import Alert from '../Alert/Alert'
 
 const Navigation = () => {
+  const navigate = useNavigate();
   const {theme, toggleTheme} = useGlobalContext()
     const [toggleDropdown, setToggleDropdown] = useState(false);
     const [isLogoutSucessful, setIsLogoutSucessful] = useState(false);
@@ -36,24 +37,30 @@ const Navigation = () => {
       };
     
       useEffect(() => {
+        
         window.addEventListener('click', handleOutsideClick);
     
         return () => {
           window.removeEventListener('click', handleOutsideClick);
         };
+        
+
       }, []);
-
-
-    const onToggleDropdown = () =>{
+      
+      
+      const onToggleDropdown = () =>{
         setToggleDropdown(!toggleDropdown)
-    }
-    const handleLogout = () =>{
-      setToggleDropdown(false)
-      dispatch(logoutUser())
-      setIsLogoutSucessful(true)
+      }
 
-    }
-  return (
+      const handleLogout = () =>{
+        // setToggleDropdown(false)
+        dispatch(logoutUser())
+        setIsLogoutSucessful(true)
+        navigate('/')
+        console.log('eco');
+  
+      }
+      return (
     <div >
         <nav className={styles.nav} >
             <div className={styles.navBreadCrumb}>

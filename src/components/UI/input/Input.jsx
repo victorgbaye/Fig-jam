@@ -30,17 +30,20 @@ Input.propTypes = {
   };
 
 
-export const AccountInput = ({label, style, readOnly, name}) =>{
+export const AccountInput = ({label, style, readOnly, name, value, onChange,placeholder}) =>{
   const {theme} = useGlobalContext()
 
     return(
         <div className={`${styles.AccountInputContainer} ${styles[theme]}`}>
             <label>{label}</label>
             <input
+            value={value}
              className={styles.AccountInput}
              style={style}
              readOnly={readOnly}
              name={name}
+             onChange={onChange}
+             placeholder={placeholder}
              
             />
         </div>
@@ -52,7 +55,7 @@ AccountInput.propTypes = {
     name: PropTypes.string,
     type: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    value: PropTypes.string,
     onChange: PropTypes.func,
     style: PropTypes.object, 
     readOnly: PropTypes.bool.isRequired,

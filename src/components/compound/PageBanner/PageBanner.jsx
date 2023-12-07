@@ -9,7 +9,10 @@ export const PageBanner = ({ title }) => {
   return (
     <div>
         <header className={`${styles.BannerWrapper} ${styles[theme]}`}>
-        <Navigation/>
+          <div style={{display:'none'}}>
+            <Navigation/>
+          </div>
+          <Navigation/>
       <section className={styles.HeroContainer}>
         <p>
           {title}
@@ -23,6 +26,4 @@ export const PageBanner = ({ title }) => {
 
 PageBanner.propTypes = {
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-    heroIcon: PropTypes.string.isRequired, // Assuming heroIcon is a URL to the image
   };

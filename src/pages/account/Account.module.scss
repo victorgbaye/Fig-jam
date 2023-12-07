@@ -14,12 +14,18 @@
         font-style: normal;
         border-radius: 8px;
     }
+    .editButton:hover{
+        cursor: pointer;
+    }
     .deleteButton{
         display: flex;
         gap: 12px;
         padding: 12px 20px;
         font-style: normal;
         border-radius: 8px;
+    }
+    .deleteButton:hover{
+        cursor: pointer;
     }
 }
 .AccountDetailsContainer{

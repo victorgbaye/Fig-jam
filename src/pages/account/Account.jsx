@@ -6,7 +6,7 @@ import styles from './Account.module.scss'
 import trash from '../../assets/trash.svg'
 import edit from '../../assets/edit.svg'
 import darkEdit from '../../assets/darkEdit.svg'
-
+import card from '../../assets/card.svg'
 import Save from '../../assets/Save.svg'
 
 import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
@@ -16,7 +16,8 @@ import PinForm from "../../components/compound/PinForm/PinForm";
 import {useGlobalContext} from '../../context'
 import Footer from "../../components/compound/Footer/Footer";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import Button from "../../components/UI/button/Button";
+// import { Navigate } from "react-router-dom";
 // import { Value } from "sass";
 
 
@@ -38,7 +39,14 @@ const Account = () => {
         subscription: user?.subscription || '',
 
     });
+    // const [userData, setUserData] = useState({
+    //     firstname: 'something',
+    //     lastname: 'something',
+    //     email: user?.email || '',
+    //     password: user?.password || '',
+    //     subscription: user?.subscription || '',
 
+    // });
     const {theme} = useGlobalContext()
 
     const closeModal = () => {
@@ -73,9 +81,9 @@ const Account = () => {
         setUserData({...userData, [name]: value})
 
       }
-      if (!user) {
-        return <Navigate to='/'/>
-    }
+    //   if (!user) {
+    //     return <Navigate to='/'/>
+    // }
   return (
     <div style={{position:'relative'}}>
         <PageBanner
@@ -109,7 +117,7 @@ const Account = () => {
                 type="string"
                 label="First Name"
                 name='firstname'
-                value={userData.firstname}
+                value={userData?.firstname}
                 readOnly={!isEditing}
                 onChange={handleChange}
                 />
@@ -127,8 +135,9 @@ const Account = () => {
             label="Email"
             name='email'
             value={userData.email}
-            readOnly={!isEditing}
+            readOnly={true}
             onChange={handleChange}
+            style={{color:'grey'}}
             />
             <div style={{position:'relative',}}> 
                 <AccountInput
@@ -137,8 +146,9 @@ const Account = () => {
                 name='password'
                 value={userData.password}
                 onChange={handleChange}
-                readOnly={!isEditing}
+                readOnly={true}
                 style={{paddingBottom: isEditing && '30px'}}
+                placeholder='********'
                 />
                 {
                     isEditing &&
@@ -152,15 +162,26 @@ const Account = () => {
                 name='subscription'
                 value={userData.subscription}
                 />
-                <AccountInput
-                label="Status"
-                readOnly={!isEditing}
-                />
             </div>
-            <AccountInput
-            label="Card details"
-            readOnly={!isEditing}
-            />
+            <div style={{position:'relative',}}>
+                <AccountInput
+                label="Card details"
+                readOnly={true}
+                placeholder='**** **** **** ****'
+                style={{paddingBottom: isEditing && '30px'}}
+                />
+                {
+                    isEditing &&
+                <Button
+                label={<div style={{display:'flex', gap:'12px',}}>
+                    <img src={card}/>
+                    <p>Update</p>
+                </div>}
+                style={{width:'117px', background:'none', color:'#222',border: '1px solid #E9BA67', position:'absolute', bottom:'20px', left:'20px', fontSize:'14px',}}
+                onClick={()=>setEditCardDetailsModalOpen(true)}
+                />
+                }
+            </div>
         </main>
         <section>
             {
