@@ -23,8 +23,7 @@ const Navigation = () => {
     const location = useLocation();
 
     const isHomePage = location.pathname === '/';
-    const getTextColor = isHomePage ? '#F5F5F5' : '#FFF'; // Change colors based on the page
-    
+    const getTextColor = isHomePage ? '#F5F5F5' : '#FFF';
     const dropdownRef = useRef(null);
     const {user} = useSelector(store =>store.user)
     const dispatch = useDispatch()
