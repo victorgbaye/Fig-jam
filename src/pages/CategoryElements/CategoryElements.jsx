@@ -71,6 +71,10 @@ const CategoryElements = () => {
             title='Nav style 001'
             paid={false}
             />
+             <FigElementCard
+            title='Responsive header'
+            paid={true}
+            />
         </section>
         <Footer/>
     </div>

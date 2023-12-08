@@ -173,12 +173,13 @@ const Account = () => {
                 {
                     isEditing &&
                 <Button
+                // onClick={setEditCardDetailsModalOpen(true)}
                 label={<div style={{display:'flex', gap:'12px',}}>
                     <img src={card}/>
                     <p>Update</p>
                 </div>}
                 style={{width:'117px', background:'none', color:'#222',border: '1px solid #E9BA67', position:'absolute', bottom:'20px', left:'20px', fontSize:'14px',}}
-                onClick={()=>setEditCardDetailsModalOpen(true)}
+                
                 />
                 }
             </div>

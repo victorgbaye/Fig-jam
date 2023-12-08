@@ -6,6 +6,7 @@
     margin-bottom: 20px;
 
     .editButton{
+        max-height: 40px;
         display: flex;
         gap: 12px;
         background: black;
@@ -23,6 +24,7 @@
         padding: 12px 20px;
         font-style: normal;
         border-radius: 8px;
+        max-height: 40px;
     }
     .deleteButton:hover{
         cursor: pointer;

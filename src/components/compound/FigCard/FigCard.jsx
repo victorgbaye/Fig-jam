@@ -10,9 +10,11 @@ import  darkCopy from '../../../assets/darkCopy.svg'
 import Alert from '../Alert/Alert';
 import {useGlobalContext} from '../../../context'
 import { useSelector } from 'react-redux';
+import Modal from '../modal/Modal';
 
 export const FigCard = () => {
   const {theme} = useGlobalContext()
+ 
 
   return (
     <div className={`${styles.figCardContainer} `} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
@@ -29,11 +31,17 @@ export const FigCard = () => {
 
 export const FigElementCard = ({title, paid}) => {
   const {user} = useSelector(store =>store.user)
-
+  const [signInModal, setSignInModal] = useState(false);
   const {theme} = useGlobalContext()
   const [showError, setShowError] = useState(false)
-  const handlePremiumError = () =>{
+
+  const handleCopyToFigma = () =>{
+    if(!user){
+      setSignInModal(!signInModal)
+    }
+    console.log('hello');
     !paid && setShowError(!showError)
+   
   }
   return (
     // ${styles[theme]}
@@ -44,10 +52,10 @@ export const FigElementCard = ({title, paid}) => {
       </div>
       <div className={styles.cardDetails}>
         <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{title}</p>
-        <span onClick={handlePremiumError} style={{backgroundColor: theme == 'dark' ? '#333' : 'white', color: theme == 'dark' ? '#F5F5F5' : '#333'}}>
+        <span onClick={handleCopyToFigma} style={{backgroundColor: theme == 'dark' ? '#333' : 'white', color: theme == 'dark' ? '#F5F5F5' : '#333'}}>
             {
               // paid ?
-          <div className={styles.copyToFigma} >
+          <div className={styles.copyToFigma} onClick={handleCopyToFigma}>
             <img src ={theme =='light' ? copy : darkCopy}/>
             <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'paid' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
           </div> 
@@ -62,6 +70,14 @@ export const FigElementCard = ({title, paid}) => {
             }
         </span>
       </div>
+      {
+        signInModal &&
+          <Modal
+          title='Log In or Sign up '
+          prompt='Log In or Sign up to access the complete figplug library.'
+          >
+          </Modal>
+      }
     </div>
   )
 }
