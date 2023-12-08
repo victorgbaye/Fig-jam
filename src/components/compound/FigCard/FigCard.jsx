@@ -1,4 +1,4 @@
-import styles from './FigCard.module.scss'
+import styles from './Figcard.module.scss'
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 // import  locked from '../../../assets/locked.svg'
