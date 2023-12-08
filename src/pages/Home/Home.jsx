@@ -21,8 +21,8 @@ const Home = () => {
         </header>
         <section className={`${styles.searchAndFilterContainer} ${styles[theme]}`}>
           <div className={styles.FilterContainer}>
-            <p style={{backgroundColor: theme == 'dark'? '#383838' : '#DAD7CE'}}>UI elements</p>
-            <p style={{backgroundColor: theme == 'dark'? '#383838' : '#DAD7CE'}}>Empty graphics</p>
+            <p style={{backgroundColor: theme == 'dark'? '#383838' : '#DAD7CE'}}>Foundation</p>
+            <p style={{backgroundColor: theme == 'dark'? '#383838' : '#DAD7CE'}}>Components</p>
           </div>
           <div  className={styles.SearchContainer} >
           <img src={theme =='light' ? Search : darkSearch} />
