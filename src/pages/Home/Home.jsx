@@ -11,9 +11,10 @@ const Home = () => {
   const {theme} = useGlobalContext()
 
   return (
+    <>
     <div  style={{position:'relative'}}>
+    <Navigation/>
         <header className={`${styles.header} ${styles[theme]}`} style={{backgroundColor: theme == 'light'? '' : '#1a1a1a'}}>
-             <Navigation/>
             <section className={styles.HeroContainer}>
                 <p>Copy & Paste <span>UI elements & Graphics</span> to your figma</p>
                <img src={HeroIcon}/>
@@ -21,6 +22,7 @@ const Home = () => {
         </header>
         <section className={`${styles.searchAndFilterContainer} ${styles[theme]}`}>
           <div className={styles.FilterContainer}>
+          <p style={{backgroundColor: theme == 'dark'? '#383838' : '#DAD7CE'}}>All</p>
             <p style={{backgroundColor: theme == 'dark'? '#383838' : '#DAD7CE'}}>Foundation</p>
             <p style={{backgroundColor: theme == 'dark'? '#383838' : '#DAD7CE'}}>Components</p>
           </div>
@@ -44,6 +46,7 @@ const Home = () => {
           <Footer/>
         </div>
     </div>
+    </>
   )
 }
 

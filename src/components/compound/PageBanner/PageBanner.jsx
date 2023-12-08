@@ -9,8 +9,8 @@ export const PageBanner = ({ title }) => {
 
   return (
     <div>
+      <Navigation/>
         <header className={`${styles.BannerWrapper} ${styles[theme]}`}>
-          <Navigation/>
       <section className={styles.HeroContainer}>
         <p>
           {title}
