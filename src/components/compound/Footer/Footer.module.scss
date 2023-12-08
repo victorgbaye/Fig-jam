@@ -2,10 +2,19 @@
     position: fixed;
     bottom: 40px;
     width: 94.5%;
-    // width: 100%;
+    max-width: 100%;
+
+
+
+
+}
+.FooterIcon{
+    max-height: 64px;
 }
 .footer{
     display: flex;
+    place-content: center;
+    place-items: center;
     justify-content: space-between;
     align-items: center;
     align-content: center;

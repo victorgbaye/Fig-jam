@@ -42,7 +42,7 @@ const Home = () => {
             <FigCard/>
             <FigCard/>
         </section>
-        <div style={{position:'absolute', width:'100%'}}>
+        <div style={{position:'absolute', }}>
           <Footer/>
         </div>
     </div>

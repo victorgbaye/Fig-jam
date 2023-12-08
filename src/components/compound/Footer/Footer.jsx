@@ -17,7 +17,7 @@ const Footer = () => {
     <div className={styles.footerWrapper}>
         {
             togleFooter ?
-        (<img src={theme == 'dark' ? darkFooter : footer} onClick={handleToggleFooter}/>) :
+        (<img src={theme == 'dark' ? darkFooter : footer} onClick={handleToggleFooter} className={styles.FooterIcon}/>) :
 
        ( <div className={` ${styles.footer} ${styles[theme]}`}>
             <span>theFigPlug 2023</span>

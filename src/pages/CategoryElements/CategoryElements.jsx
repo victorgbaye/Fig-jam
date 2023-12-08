@@ -76,7 +76,7 @@ const CategoryElements = () => {
             paid={true}
             />
         </section>
-        <Footer/>
+         <Footer/>
     </div>
   )
 }

@@ -52,8 +52,19 @@
     span:hover{
         background: linear-gradient(91deg, #DCAC58 22.54%, #E38C6B 47.83%, #DB7C9A 55.52%, #D27DA7 74.48%);
     }
+    .componentName{
+        color: #333;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 16.8px */
+    }
     .componentLength{
+        color: #666;
         font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; 
     }
 
 }
