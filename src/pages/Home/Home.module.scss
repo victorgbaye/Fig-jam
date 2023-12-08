@@ -48,10 +48,16 @@
         gap: 12px;
 
         p{
-            background-color: #DAD7CE;
+            background-color: #FFF;
+            border: 1px solid #CCC;
             border-radius: 100px;
             padding: 8px 12px;
+            // color: #434343;
             font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 22.4px */
+            letter-spacing: 0.238px;
         }
     }
     .SearchContainer{
@@ -77,6 +83,12 @@
     }
 }
 .dark{
+        .FilterContainer{
+            P{
+                color: #D1D1D1;
+                border: none;
+            }
+        }
     // background-color: #1A1A1A;
     .SearchContainer{
         background-color: #2C2C2C;
