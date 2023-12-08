@@ -30,6 +30,8 @@ const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm,
             <div className={styles.ModalBody}>
             {children}
             </div>
+            {
+
             <div className={styles.ModalFooter}>
               <Button 
               onClick={onConfirm}
@@ -42,6 +44,7 @@ const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm,
               onClick={closeModal}
               />
             </div>
+            }
         </div>
     </div>
   )
