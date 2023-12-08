@@ -23,7 +23,7 @@ const Alert = ({ type, message, children }) => {
     return () => {
       clearTimeout(timer);
     };
-  }, []); // Empty dependency array ensures the effect runs only once after the initial render
+  }, []); 
 
   const handleClose = () => {
     setVisible(false);
