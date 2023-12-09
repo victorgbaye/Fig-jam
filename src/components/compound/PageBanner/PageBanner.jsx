@@ -23,5 +23,5 @@ export const PageBanner = ({ title }) => {
 }
 
 PageBanner.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.any,
   };

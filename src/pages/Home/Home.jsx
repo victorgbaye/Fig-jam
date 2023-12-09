@@ -32,15 +32,17 @@ const Home = () => {
           </div>
         </section>
         <section className={styles.cardGrid}>
-            <FigCard/>
-            <FigCard/>
-            <FigCard/>
-            <FigCard/>
-            <FigCard/>
-            <FigCard/>
-            <FigCard/>
-            <FigCard/>
-            <FigCard/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Footer'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
+            <FigCard componentName='Responsive Navigation Bar'/>
         </section>
         <div style={{position:'absolute', }}>
           <Footer/>

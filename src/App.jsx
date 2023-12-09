@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route/>
             <Route path="/" element={<Home/>} />
-            <Route path="/category" element={<CategoryElements/>} />
+            <Route path="/component/:componentName" element={<CategoryElements/>} />
             <Route path="/account" element={<Account/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<Signup/>} />

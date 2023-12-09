@@ -10,24 +10,32 @@ import  darkCopy from '../../../assets/darkCopy.svg'
 import Alert from '../Alert/Alert';
 import {useGlobalContext} from '../../../context'
 import { useSelector } from 'react-redux';
-import Modal from '../modal/Modal';
+import { NotLoggedInModal } from '../modal/Modal';
+import { Link } from 'react-router-dom';
 
-export const FigCard = () => {
+export const FigCard = ({componentName}) => {
   const {theme} = useGlobalContext()
- 
+  
+
 
   return (
-    <div className={`${styles.figCardContainer} `} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
-      <div className={styles.componentThumbnail}style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F5F5F5'}}>
-      <img src={CategoryThumbnail}/>
+    <Link to={`/component/${componentName}`}>
+      <div className={`${styles.figCardContainer} `} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
+        <div className={styles.componentThumbnail}style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F5F5F5'}}>
+        <img src={CategoryThumbnail}/>
+        </div>
+        <div className={`${styles.cardDetails} ${styles[theme]}`}>
+          <p className={styles.componentName} style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{componentName}</p>
+          <p className={styles.componentLength} style={{color: theme == 'dark' ? '#ccc' : '#666'}}>1 Component</p>
+        </div>
       </div>
-      <div className={`${styles.cardDetails} ${styles[theme]}`}>
-        <p className={styles.componentName} style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>Responsive Navigation Bar</p>
-        <p className={styles.componentLength} style={{color: theme == 'dark' ? '#ccc' : '#666'}}>1 Component</p>
-      </div>
-    </div>
+    </Link>
   )
 }
+
+FigCard.propTypes = {
+  componentName: PropTypes.string,
+};
 
 export const FigElementCard = ({title, paid}) => {
   const {user} = useSelector(store =>store.user)
@@ -38,10 +46,14 @@ export const FigElementCard = ({title, paid}) => {
   const handleCopyToFigma = () =>{
     if(!user){
       setSignInModal(!signInModal)
+    }else{
+      console.log('hello');
+      paid && setShowError(!showError)
     }
-    console.log('hello');
-    !paid && setShowError(!showError)
    
+  }
+  const closeModal = () => {
+    setSignInModal(!signInModal)
   }
   return (
     // ${styles[theme]}
@@ -51,12 +63,12 @@ export const FigElementCard = ({title, paid}) => {
         <img src={DesignThumbnail}/>
       </div>
       <div className={styles.cardDetails}>
-        <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{title}</p>
+        <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333', fontWeight:400}}>{title}</p>
         <span onClick={handleCopyToFigma} style={{backgroundColor: theme == 'dark' ? '#333' : 'white', color: theme == 'dark' ? '#F5F5F5' : '#333'}}>
             {
               // paid ?
           <div className={styles.copyToFigma} onClick={handleCopyToFigma}>
-            <img src ={theme =='light' ? copy : darkCopy}/>
+            <img src ={theme =='light' ? copy : darkCopy} style={{background:'none'}}/>
             <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'paid' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
           </div> 
         //  ( <div className={styles.copyToFigma} >
@@ -72,11 +84,15 @@ export const FigElementCard = ({title, paid}) => {
       </div>
       {
         signInModal &&
-          <Modal
+          <NotLoggedInModal
           title='Log In or Sign up '
           prompt='Log In or Sign up to access the complete figplug library.'
+          closeModal={closeModal}
           >
-          </Modal>
+          </NotLoggedInModal>
+          // <NotLoggedInModal>
+            
+          // </NotLoggedInModal>
       }
     </div>
   )

@@ -67,7 +67,7 @@ const Navigation = () => {
             </Link>
             {!isHomePage && (
         <p style={{ color: getTextColor }}>
-           / {location.pathname.slice(1).charAt(0).toUpperCase() + location.pathname.slice(2)}
+           / {location.pathname.slice(1).charAt(0).toUpperCase() + location.pathname.slice(2).replace(/%20/g, '-')}
         </p>
       )}
             </div>

@@ -9,14 +9,17 @@ import { FigElementCard } from '../../components/compound/FigCard/FigCard'
 import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
 import { useGlobalContext } from '../../context'
 import styles from './CategoryElements.module.scss'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+
 import Footer from '../../components/compound/Footer/Footer'
 const CategoryElements = () => {
+  const { componentName } = useParams();
+  
   const {theme} = useGlobalContext()
   return (
     <div style={{position:'relative'}}>
         <PageBanner
-        title='Responsive Navigation Bar'
+        title={componentName}
         />
         {/* <header>
             <section className={styles.HeroContainer}>
@@ -73,7 +76,7 @@ const CategoryElements = () => {
             />
              <FigElementCard
             title='Responsive header'
-            paid={true}
+            paid={false}
             />
         </section>
          <Footer/>
