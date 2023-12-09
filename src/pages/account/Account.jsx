@@ -11,7 +11,7 @@ import Save from '../../assets/Save.svg'
 
 import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
 import {Modal} from '../../components/compound/modal/Modal'
-import Alert from "../../components/compound/Alert/Alert";
+// import Alert from "../../components/compound/Alert/Alert";
 import PinForm from "../../components/compound/PinForm/PinForm";
 import {useGlobalContext} from '../../context'
 import Footer from "../../components/compound/Footer/Footer";
@@ -276,7 +276,7 @@ const Account = () => {
                 </div>
                  </Modal>   
             }
-           <Alert type="success" message="Your chnages have been saved successfully"></Alert>
+           {/* <Alert type="success" message="Your chnages have been saved successfully"></Alert> */}
         </section>
         <Footer/>
     </div>
