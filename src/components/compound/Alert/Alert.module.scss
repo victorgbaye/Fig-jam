@@ -1,22 +1,59 @@
 
 .dark{
     .success{
-        background: rgba(27, 94, 32, 0.10);
+        background: rgba(27, 94, 32, 0.40);
+        .alertContent .AlertmessageStyle{
+            .messageStyle{
+                color: #F5F5F5;
+            }
+            .child{
+                color: #C8E6C9;
+            }
+        } 
     }
     .failure{
-        background: rgba(120, 40, 31, 0.10);
+        background: rgba(120, 40, 31, 0.40);
+        .alertContent .AlertmessageStyle{
+            .messageStyle{
+                color: #F5F5F5;
+            }
+            .child{
+                color: #FADBD8;
+            }
+        } 
 
     }
     .info{
-        background: rgba(120, 40, 31, 0.10);
+        background: rgba(21, 67, 96, 0.40);
+        .alertContent{
+            .AlertmessageStyle{
+                .messageStyle{
+                    color: #F5F5F5;
+                }
+                .child{
+                    color: #D4E6F1;
+                }
+            } 
+        } 
 
     }
     .warning{
         background:  rgba(125, 102, 8, 0.10);
+        .alertContent .AlertmessageStyle{
+            .messageStyle{
+                color: #F5F5F5;
+            }
+            .child{
+                color: #FCF3CF;
+            }
+        } 
     }
-    .alert .alertContent .AlertmessageStyle .messageStyle{
-        color: #F5F5F5;
-    }
+    .alert .alertContent .AlertmessageStyle{
+        .messageStyle{
+            color: #F5F5F5;
+        }
+
+    } 
 }
 .alert{
     padding: 20px;

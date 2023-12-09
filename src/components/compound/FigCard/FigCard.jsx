@@ -46,9 +46,9 @@ export const FigElementCard = ({title, paid}) => {
   const handleCopyToFigma = () =>{
     if(!user){
       setSignInModal(!signInModal)
-    }else{
-      console.log('hello');
-      paid && setShowError(!showError)
+    }else if(paid){
+      setShowError(true)
+      setTimeout(()=>setShowError(false),3000)
     }
    
   }
@@ -78,7 +78,7 @@ export const FigElementCard = ({title, paid}) => {
             }
             {
               showError &&
-           <Alert type='neutral' message="Your Account currently has no active payement">Update Payment</Alert>
+           <Alert type='info' message="Your Account currently has no active payement">Update Payment</Alert>
             }
         </span>
       </div>

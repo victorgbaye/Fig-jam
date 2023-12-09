@@ -1,7 +1,9 @@
 import { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-
+import { useGlobalContext } from '../../../context';
+import styles from './PinForm.module.scss'
 const PasscodeInput = ({ onSubmit }) => {
+  const {theme} = useGlobalContext()
   const [passcode, setPasscode] = useState(['', '', '', '']);
   const inputRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
@@ -35,6 +37,7 @@ const PasscodeInput = ({ onSubmit }) => {
           onChange={(e) => handleChange(index, e.target.value)}
           ref={inputRefs[index]}
           style={{height:'64px', padding:'8px 16px', width:'75px', borderRadius:'8px' }}
+          className={`${styles.pinForm} ${styles[theme]}`}
 
         />
       ))}

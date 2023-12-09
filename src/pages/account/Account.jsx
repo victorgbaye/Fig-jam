@@ -173,10 +173,10 @@ const Account = () => {
                 {
                     isEditing &&
                 <Button
-                // onClick={setEditCardDetailsModalOpen(true)}
+                onClick={()=>setEditCardDetailsModalOpen(!editCardDetailsModalOpen)}
                 label={<div style={{display:'flex', gap:'12px',}}>
                     <img src={card}/>
-                    <p>Update</p>
+                    <p style={{color: theme == 'dark'? '#FFF' : '#222222'}}>Update</p>
                 </div>}
                 style={{width:'117px', background:'none', color:'#222',border: '1px solid #E9BA67', position:'absolute', bottom:'20px', left:'20px', fontSize:'14px',}}
                 
@@ -207,6 +207,7 @@ const Account = () => {
                 closeModal={closeModal}
                 prompt="Are you sure you want to delete this account?"
                 buttonLabel="Delete"
+                deleteColor='#FFF'
                 />
             }
             {

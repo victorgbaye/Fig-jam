@@ -9,7 +9,7 @@ import {useGlobalContext} from '../../../context'
 import { Link } from 'react-router-dom';
 
 
-export const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm, children}) => {
+export const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm, children, deleteColor}) => {
   const {theme} = useGlobalContext()
 
 
@@ -37,7 +37,7 @@ export const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onC
               <Button 
               onClick={onConfirm}
               label={buttonLabel}
-              style={{padding:'12px 20px', width:'auto', background: confirmColor, border:'none', outline:'none', color:`${theme =='light' ? '#FFF' : theme =='dark' ? '#1A1A1A' : ''}`}}
+              style={{padding:'12px 20px', width:'auto', background: confirmColor, border:'none', outline:'none', color:`${theme == 'dark' && deleteColor =='#FFF' ? deleteColor: theme =='light' ? '#FFF' : theme =='dark' ? '#1A1A1A'  :''}`}}
               />
               <Button
               label='Cancel'
@@ -51,7 +51,7 @@ export const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onC
   )
 }
 Modal.propTypes = {
-
+  deleteColor: PropTypes.string,
   closeModal: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   prompt: PropTypes.string.isRequired,
@@ -59,6 +59,7 @@ Modal.propTypes = {
   buttonLabel: PropTypes.string.isRequired,
   onConfirm: PropTypes.func,
   children: PropTypes.node,
+  
 
 }
 
