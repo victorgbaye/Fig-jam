@@ -64,7 +64,7 @@ export const FigElementCard = ({title, paid}) => {
       </div>
       <div className={styles.cardDetails}>
         <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333', fontWeight:400}}>{title}</p>
-        <span onClick={handleCopyToFigma} style={{backgroundColor: theme == 'dark' ? '#333' : 'white', color: theme == 'dark' ? '#F5F5F5' : '#333'}}>
+        <span onClick={handleCopyToFigma} style={{backgroundColor: theme == 'dark' ? '#333' : 'white', color: theme == 'dark' ? '#F5F5F5' : '#333'}} className={styles.CopyWrapper}>
             {
               // paid ?
           <div className={styles.copyToFigma} onClick={handleCopyToFigma}>

@@ -68,11 +68,18 @@
     }
 
 }
-
+.CopyWrapper:hover{
+    cursor: pointer;
+}
 .copyToFigma{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    
+}
+
+.copyToFigma:hover{
+    cursor: pointer;
     
 }
