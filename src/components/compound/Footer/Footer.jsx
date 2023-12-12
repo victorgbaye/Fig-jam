@@ -19,7 +19,7 @@ const Footer = () => {
             togleFooter ?
         (<img src={theme == 'dark' ? darkFooter : footer} onClick={handleToggleFooter} className={styles.FooterIcon}/>) :
 
-       ( <div className={` ${styles.footer} ${styles[theme]}`}>
+       ( <div className={` ${styles.footer} ${styles[theme]}` } style={{display: togleFooter && 'none'}}>
             <span>theFigPlug 2023</span>
             <div className={styles.footerPages}>
                 <p>Contact</p>

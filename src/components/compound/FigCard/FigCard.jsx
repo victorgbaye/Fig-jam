@@ -7,6 +7,8 @@ import DesignThumbnail from '../../../assets/DesignThumbnail.svg'
 import CategoryThumbnail from '../../../assets/CategoryThumbnail.svg'
 import  copy from '../../../assets/copy.svg'
 import  darkCopy from '../../../assets/darkCopy.svg'
+import  cardLens from '../../../assets/cardLens.svg'
+
 import Alert from '../Alert/Alert';
 import {useGlobalContext} from '../../../context'
 import { useSelector } from 'react-redux';
@@ -61,6 +63,10 @@ export const FigElementCard = ({title, paid}) => {
       <div className={styles.componentThumbnail} style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F2F2F2'}}>
       {/* 1A1A1A */}
         <img src={DesignThumbnail}/>
+        <div>
+          <img src={cardLens} className={styles.cardLens} />
+        </div>
+       
       </div>
       <div className={styles.cardDetails}>
         <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333', fontWeight:400}}>{title}</p>

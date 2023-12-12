@@ -3,13 +3,17 @@
     bottom: 40px;
     width: 94.5%;
     max-width: 100%;
-
+    .FooterIcon{
+        max-height: 64px;
+    max-width: 64px;
+    }
 
 
 
 }
 .FooterIcon{
     max-height: 64px;
+    max-width: 64px;
 }
 .footer{
     display: flex;
