@@ -9,6 +9,8 @@ import  copy from '../../../assets/copy.svg'
 import  darkCopy from '../../../assets/darkCopy.svg'
 import  cardLens from '../../../assets/cardLens.svg'
 import  darkCardLens from '../../../assets/darkCardLens.svg'
+import  X from '../../../assets/X.svg'
+import  darkX from '../../../assets/darkX.svg'
 
 
 import Alert from '../Alert/Alert';
@@ -16,6 +18,7 @@ import {useGlobalContext} from '../../../context'
 import { useSelector } from 'react-redux';
 import { NotLoggedInModal } from '../modal/Modal';
 import { Link } from 'react-router-dom';
+import Button from '../../UI/button/Button';
 
 export const FigCard = ({componentName}) => {
   const {theme} = useGlobalContext()
@@ -46,7 +49,7 @@ export const FigElementCard = ({title, paid}) => {
   const [signInModal, setSignInModal] = useState(false);
   const {theme} = useGlobalContext()
   const [showError, setShowError] = useState(false)
-
+  const [showPreview, setShowPreview] = useState(false)
   const handleCopyToFigma = () =>{
     if(!user){
       setSignInModal(!signInModal)
@@ -62,7 +65,7 @@ export const FigElementCard = ({title, paid}) => {
   return (
     // ${styles[theme]}
     <div className={` ${styles.figCardContainer} ${styles[theme]}`} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
-      <div className={styles.componentThumbnail} style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F2F2F2'}}>
+      <div className={styles.componentThumbnail} style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F2F2F2'}} onClick={()=>setShowPreview(!showPreview)}>
       {/* 1A1A1A */}
         <img src={DesignThumbnail}/>
         <div className={styles.cardLens} >
@@ -101,6 +104,31 @@ export const FigElementCard = ({title, paid}) => {
           // <NotLoggedInModal>
             
           // </NotLoggedInModal>
+      }
+      {
+        showPreview &&
+        <div className={styles.previewOverlay}>
+          <div className={styles.previewContainer}>
+            <section className={styles.previewHeader}>
+              <p>Input style 1</p>
+              <img src={theme == 'light' ? X : darkX} onClick={()=>setShowPreview(false)}/>
+            </section>
+            <section className={styles.PreviewImageContainer}>
+              <img src={DesignThumbnail} />
+            </section>
+            <section>
+              <Button
+                label={
+                  <div style={{display:'flex', gap:'12px', placeItems:'center', justifyContent:'center'}}>
+                    <img src={theme =='light' ? copy : darkCopy}/>
+                    <p style={{ color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'paid' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
+                  </div>
+              }
+                style={{padding:'12px 16px', background: theme == 'dark' ? '#333' : '#FFF', border: '1px solid #E9BA67'}}
+              />
+            </section>
+          </div>
+        </div>
       }
     </div>
   )
