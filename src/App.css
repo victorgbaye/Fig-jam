@@ -58,3 +58,16 @@
 .read-the-docs {
   color: #888;
 }
+
+@media only screen and (max-width: 768px) {
+  /* CSS styles for mobile devices */
+  .App {
+    /* Add styles to adjust layout for mobile devices if needed */
+    
+  }
+  
+  /* Show or hide the MobileComponent based on the media query */
+  .MobileComponent {
+    display: block; /* Show the component */
+  }
+}
