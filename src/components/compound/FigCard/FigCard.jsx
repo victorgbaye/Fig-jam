@@ -95,12 +95,15 @@ export const FigElementCard = ({title, paid}) => {
       </div>
       {
         signInModal &&
-          <NotLoggedInModal
-          title='Log In or Sign up '
-          prompt='Log In or Sign up to access the complete figplug library.'
-          closeModal={closeModal}
-          >
-          </NotLoggedInModal>
+        <div style={{zIndex:1}}>
+            <NotLoggedInModal
+            title='Log In or Sign up '
+            prompt='Log In or Sign up to access the complete figplug library.'
+            closeModal={closeModal}
+            
+            >
+            </NotLoggedInModal>
+        </div>
           // <NotLoggedInModal>
             
           // </NotLoggedInModal>
