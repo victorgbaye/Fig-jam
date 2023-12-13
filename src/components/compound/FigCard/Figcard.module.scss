@@ -29,13 +29,19 @@
         width: 50%;
     }
     .cardLens{
-        z-index: 1;
         position: absolute;
         top: 17px;
         right: 20px;
-        width: 12px;
-        height: 12px;
-        border: 1px solid red;
+        // width: 12px;
+        // height: 12px;
+        // border: 1px solid red;
+        padding: 10px;
+        border-radius: 8px;
+        background: #FFF;
+        img{
+            display: flex;
+            width: 12px;
+        }
     }
 }
 .cardDetails{
@@ -92,4 +98,12 @@
 .copyToFigma:hover{
     cursor: pointer;
     
+}
+
+.dark{
+    .componentThumbnail{
+        .cardLens{
+            background: #2C2C2C;
+        }
+    }
 }

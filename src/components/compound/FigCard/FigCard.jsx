@@ -8,6 +8,8 @@ import CategoryThumbnail from '../../../assets/CategoryThumbnail.svg'
 import  copy from '../../../assets/copy.svg'
 import  darkCopy from '../../../assets/darkCopy.svg'
 import  cardLens from '../../../assets/cardLens.svg'
+import  darkCardLens from '../../../assets/darkCardLens.svg'
+
 
 import Alert from '../Alert/Alert';
 import {useGlobalContext} from '../../../context'
@@ -59,12 +61,12 @@ export const FigElementCard = ({title, paid}) => {
   }
   return (
     // ${styles[theme]}
-    <div className={`${styles.figCardContainer} `} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
+    <div className={` ${styles.figCardContainer} ${styles[theme]}`} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
       <div className={styles.componentThumbnail} style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F2F2F2'}}>
       {/* 1A1A1A */}
         <img src={DesignThumbnail}/>
-        <div>
-          <img src={cardLens} className={styles.cardLens} />
+        <div className={styles.cardLens} >
+           <img src={ theme == 'light' ? cardLens : darkCardLens} />
         </div>
        
       </div>
