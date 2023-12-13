@@ -5,6 +5,7 @@
     background-color:#222;
     border-radius: 28px;
     padding: 40px;
+    max-width: 100vw;
 
 }
 
@@ -15,11 +16,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    place-items: center;
     // padding-left: 117px;
     padding-top: 32px;
     gap: 20px;
     // margin-bottom: 82px;
     color: white;
+    max-width: 100vw;
 
     p{
         span{
@@ -41,6 +44,8 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
+    max-width: 100vw;
+    width: 100%;
 
     .FilterContainer{
         display: flex;
