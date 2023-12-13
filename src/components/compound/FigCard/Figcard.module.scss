@@ -29,6 +29,7 @@
         width: 50%;
     }
     .cardLens{
+        display: none;
         position: absolute;
         top: 17px;
         right: 20px;
@@ -42,6 +43,12 @@
             display: flex;
             width: 12px;
         }
+    }
+}
+.componentThumbnail:hover{
+    cursor: pointer;
+    .cardLens{
+        display: block;
     }
 }
 .cardDetails{
