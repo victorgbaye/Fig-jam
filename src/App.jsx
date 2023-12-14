@@ -12,6 +12,7 @@ import Signup from './pages/Auth/Signup/Signup'
 import Account from './pages/account/Account'
 import Home from './pages/Home/Home'
 import MobileComponent from './pages/MobileComponent/MobileComponent';
+import Subscription from './pages/Subscription/Subscription';
 
 function App() {
   const {theme, toggleTheme} = useGlobalContext()
@@ -46,12 +47,15 @@ function App() {
             <Route path="/account" element={<Account/>} />
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<Signup/>} />
+            <Route path="/subscriptioin" element={<Subscription/>} />
+
           </Routes>
         </Router>
         {/* <Home/> */}
         {/* <Login/> */}
         {/* <Signup/> */}
         {/* <Account/> */}
+
       </div>
     </ThemeContext.Provider>
 
