@@ -1,5 +1,7 @@
 // // import React from 'react';
 
+import { useSelector } from "react-redux";
+
 // const Subscription = () => {
 //   const handleClick = async () => {
 //     const response = await fetch('/create-checkout-session', {
@@ -25,16 +27,37 @@
 // import React from 'react';
 
 const Subscription = () => {
-  const handleClick = async () => {
-    const response = await fetch('http://localhost:5000/stripe/create-checkout-session', {
-      method: 'POST',
-    });
+  const {user} = useSelector(store =>store.user)
+  const { email } = user
+  // const handleClick = async () => {
+  //   const response = await fetch('http://localhost:5000/stripe/create-checkout-session', {
+  //     method: 'POST',
+  //   });
 
-    const session = await response.json();
-    console.log(session.session.url);
-    // Redirect to Stripe Checkout
-    window.location = `${session.session.url}`;
+  //   const session = await response.json();
+  //   console.log(session.session.url);
+  //   // Redirect to Stripe Checkout
+  //   window.location = `${session.session.url}`;
+  // };
+  const handleClick = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/stripe/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }), // Include the email in the request body
+      });
+
+      const session = await response.json();
+      console.log(session.session.url);
+      // Redirect to Stripe Checkout
+      window.location = `${session.session.url}`;
+    } catch (error) {
+      console.error('Error creating checkout session:', error);
+    }
   };
+
 
   return (
     <div>
