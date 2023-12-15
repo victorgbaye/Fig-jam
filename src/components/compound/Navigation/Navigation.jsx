@@ -74,7 +74,7 @@ const Navigation = () => {
             <div className={styles.userSec} >
               <div onClick={toggleTheme} style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'8px'}}>
               <img src={theme == 'light'? Toggle: darkToggle}/>
-              <span>{theme == 'light'? 'Light Mode': 'Dark Mode'}</span>
+              {/* <span>{theme == 'light'? 'Light Mode': 'Dark Mode'}</span> */}
               </div>
               {
                 !user ?
