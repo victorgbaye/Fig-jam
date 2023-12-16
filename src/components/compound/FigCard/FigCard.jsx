@@ -13,10 +13,10 @@ import  X from '../../../assets/X.svg'
 import  darkX from '../../../assets/darkX.svg'
 
 
-import Alert from '../Alert/Alert';
+// import Alert from '../Alert/Alert';
 import {useGlobalContext} from '../../../context'
 import { useSelector } from 'react-redux';
-import { NotLoggedInModal } from '../modal/Modal';
+import { NotLoggedInModal, NotPremiumModal } from '../modal/Modal';
 import { Link } from 'react-router-dom';
 import Button from '../../UI/button/Button';
 
@@ -53,14 +53,17 @@ export const FigElementCard = ({title, paid}) => {
   const handleCopyToFigma = () =>{
     if(!user){
       setSignInModal(!signInModal)
-    }else if(paid){
+    }
+    else if(paid){
       setShowError(true)
-      setTimeout(()=>setShowError(false),3000)
+      // setTimeout(()=>setShowError(false),3000)
     }
    
   }
   const closeModal = () => {
-    setSignInModal(!signInModal)
+    // setShowError(false)
+    setSignInModal(false)
+    console.log('hello');
   }
   return (
     // ${styles[theme]}
@@ -75,12 +78,12 @@ export const FigElementCard = ({title, paid}) => {
       </div>
       <div className={styles.cardDetails}>
         <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333', fontWeight:400}}>{title}</p>
-        <span onClick={handleCopyToFigma} style={{backgroundColor: theme == 'dark' ? '#333' : 'white', color: theme == 'dark' ? '#F5F5F5' : '#333'}} className={styles.CopyWrapper}>
+        <span  style={{backgroundColor: theme == 'dark' ? '#333' : 'white', color: theme == 'dark' ? '#F5F5F5' : '#333'}} className={styles.CopyWrapper}>
             {
               // paid ?
           <div className={styles.copyToFigma} onClick={handleCopyToFigma}>
             <img src ={theme =='light' ? copy : darkCopy} style={{background:'none'}}/>
-            <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'paid' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
+            <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'premium' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
           </div> 
         //  ( <div className={styles.copyToFigma} >
         //     <img src ={theme == 'light' ? locked : darkLocked}/>
@@ -89,7 +92,16 @@ export const FigElementCard = ({title, paid}) => {
             }
             {
               showError &&
-           <Alert type='info' message="Your Account currently has no active payement">Update Payment</Alert>
+          //  <Alert type='info' message="Your Account currently has no active payement">Update Payment</Alert>
+          <div style={{zIndex:1, position:'absolute'}}>
+
+              <NotPremiumModal
+              title='Go pro'
+              prompt='Access unlimited recources on our platform for $20 monthly only'
+              closeModal={()=>setShowError(false)}
+              
+              />
+          </div>
             }
         </span>
       </div>

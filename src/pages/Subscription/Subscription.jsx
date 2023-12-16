@@ -1,6 +1,7 @@
 // // import React from 'react';
 
 import { useSelector } from "react-redux";
+import Button from "../../components/UI/button/Button";
 
 // const Subscription = () => {
 //   const handleClick = async () => {
@@ -61,8 +62,11 @@ const Subscription = () => {
 
   return (
     <div>
-      <h1>Subscription Details</h1>
-      <button onClick={handleClick}>Subscribe</button>
+      {/* <button onClick={handleClick}>Subscribe</button> */}
+      <Button
+      label='go pro'
+      onClick={handleClick}
+      />
     </div>
   );
 };

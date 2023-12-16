@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 // import { useState } from "react";
 import {useGlobalContext} from '../../../context'
 import { Link } from 'react-router-dom';
+import Subscription from '../../../pages/Subscription/Subscription';
 
 
 export const Modal = ({prompt, title, closeModal, confirmColor, buttonLabel, onConfirm, children, deleteColor}) => {
@@ -122,3 +123,58 @@ NotLoggedInModal.propTypes = {
 
 
 
+export const NotPremiumModal = ({prompt, title, closeModal, children}) => {
+  const {theme} = useGlobalContext()
+
+
+  // const handleConfirmClick = () => {
+  //   onConfirm();
+   
+  // };
+  return (
+    <div className={styles.ModalOverlay}>
+        <div className={`${styles.Modal} ${styles[theme]}`}>
+            <header className={styles.ModalHeader}>
+                <h6>{title}</h6>
+                <img src={theme == 'light'? X : darkX} alt="X Icon"  onClick={closeModal}/>
+            </header>
+            <div className={styles.ModalBody}>
+              <p>{prompt}</p>
+              
+            </div>
+            <div className={styles.ModalBody}>
+            {children}
+            </div>
+            {
+
+            <div className={styles.NotLoggedModalFooter}>
+              <Subscription/>
+              {/* <Link to='/login'>
+                <Button 
+                label='Log in'
+                style={{padding:'12px 20px', width:'100%', background: `${theme =='light' ? '#F5F5F5' : theme =='dark' ? '#333' : ''}`, border:'none', outline:'none', color:`${theme =='light' ? '#333' : theme =='dark' ? '#F5F5F5' : ''}`}}
+                // onClick={}
+                />
+              </Link>
+              <Link to='/signup'>
+                <Button
+                label='Sign Up'
+                style={{padding:'12px 20px', width:'100%', background:  `${theme =='light' ? '#333' : theme =='dark' ? '#F5F5F5' : ''}`, border:'none', outline:'none', color:`${theme =='light' ? '#FFF' : '#1A1A1A'}`}}
+                onClick={closeModal}
+                />
+              </Link> */}
+            </div>
+            }
+        </div>
+    </div>
+  )
+}
+NotPremiumModal.propTypes = {
+
+  closeModal: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  prompt: PropTypes.string.isRequired,
+  buttonLabel: PropTypes.string,
+  children: PropTypes.node,
+
+}

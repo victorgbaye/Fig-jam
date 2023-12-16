@@ -28,7 +28,7 @@ const Account = () => {
     const [saveDetailsModalOpen, setSaveDetailsEditModalOpen] = useState(false);
     const [editCardDetailsModalOpen, setEditCardDetailsModalOpen] = useState(false);
     const [updatePasswordModalOpen, setUpdatePasswordModalOpen] = useState(false);
-    const {user} = useSelector(store =>store.user)
+    const { user } = useSelector(store =>store.user)
 
     // const dispatch = useDispatch()
     const [userData, setUserData] = useState({
