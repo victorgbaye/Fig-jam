@@ -42,7 +42,7 @@ const Subscription = () => {
   // };
   const handleClick = async () => {
     try {
-      const response = await fetch('http://localhost:5000/stripe/create-checkout-session', {
+      const response = await fetch('https://fig-plug-api.onrender.com/stripe/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
