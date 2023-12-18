@@ -13,6 +13,8 @@ import Account from './pages/account/Account'
 import Home from './pages/Home/Home'
 import MobileComponent from './pages/MobileComponent/MobileComponent';
 import Subscription from './pages/Subscription/Subscription';
+import AboutUs from './pages/AboutUs/AboutUs';
+import TermOfUse from './pages/TermOfUse/TermOfUse';
 
 function App() {
   const {theme, toggleTheme} = useGlobalContext()
@@ -48,6 +50,10 @@ function App() {
             <Route path="/login" element={<Login/>} />
             <Route path="/signup" element={<Signup/>} />
             <Route path="/subscriptioin" element={<Subscription/>} />
+            <Route path="/aboutus" element={ <AboutUs/>} />
+            <Route path="/termofuse" element={<TermOfUse/>} />
+            <AboutUs/>
+            
 
           </Routes>
         </Router>
