@@ -85,11 +85,8 @@ export const FigElementCard = ({title, paid}) => {
             <img src ={theme =='light' ? copy : darkCopy} style={{background:'none'}}/>
             <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'premium' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
           </div> 
-        //  ( <div className={styles.copyToFigma} >
-        //     <img src ={theme == 'light' ? locked : darkLocked}/>
-        //     <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>Premium Subscriber</p>
-        //   </div>)
             }
+            
             {
               showError &&
           //  <Alert type='info' message="Your Account currently has no active payement">Update Payment</Alert>
