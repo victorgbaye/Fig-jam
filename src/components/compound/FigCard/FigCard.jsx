@@ -86,7 +86,7 @@ export const FigElementCard = ({title, paid}) => {
             <p style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'premium' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
           </div> 
             }
-            
+
             {
               showError &&
           //  <Alert type='info' message="Your Account currently has no active payement">Update Payment</Alert>
@@ -113,9 +113,7 @@ export const FigElementCard = ({title, paid}) => {
             >
             </NotLoggedInModal>
         </div>
-          // <NotLoggedInModal>
-            
-          // </NotLoggedInModal>
+
       }
       {
         showPreview &&
