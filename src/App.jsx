@@ -51,9 +51,7 @@ function App() {
             <Route path="/signup" element={<Signup/>} />
             <Route path="/subscriptioin" element={<Subscription/>} />
             <Route path="/aboutus" element={ <AboutUs/>} />
-            <Route path="/termofuse" element={<TermOfUse/>} />
-            <AboutUs/>
-            
+            <Route path="/termofuse" element={<TermOfUse/>} />            
 
           </Routes>
         </Router>
