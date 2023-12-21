@@ -55,10 +55,6 @@ function App() {
 
           </Routes>
         </Router>
-        {/* <Home/> */}
-        {/* <Login/> */}
-        {/* <Signup/> */}
-        {/* <Account/> */}
 
       </div>
     </ThemeContext.Provider>
