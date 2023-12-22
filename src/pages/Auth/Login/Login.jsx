@@ -22,7 +22,6 @@ const Login = () => {
     const name = e.target.name
     const value = e.target.value
     setLoginValues({...loginValues, [name]:value})
-    console.log(`${name}: ${value}`)
   }
   const onSubmit = (e) => {
     e.preventDefault()
@@ -31,8 +30,7 @@ const Login = () => {
       console.log('please fill all fields');
     }
     dispatch(loginUser({email: email, password: password}))
-    console.log(e.target)
-    console.log(e.target)
+
   }
 
   useEffect(() => {
