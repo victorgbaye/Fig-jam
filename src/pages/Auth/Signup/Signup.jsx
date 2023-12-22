@@ -26,7 +26,6 @@ const Signup = () => {
     const name = e.target.name
     const value = e.target.value
     setSignupValues({...signupValues, [name]:value})
-    console.log(`${name}: ${value}`)
   }
   const onSubmit = (e) => {
     e.preventDefault()
@@ -35,7 +34,6 @@ const Signup = () => {
       console.log('please fill all fields');
     }
     dispatch(registerUser({firstname: firstname, lastname: lastname, email: email, password: password}))
-    console.log(e.target)
     
 
   }
