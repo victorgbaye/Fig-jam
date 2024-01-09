@@ -39,14 +39,7 @@ const Account = () => {
         subscription: user?.subscription || '',
 
     });
-    // const [userData, setUserData] = useState({
-    //     firstname: 'something',
-    //     lastname: 'something',
-    //     email: user?.email || '',
-    //     password: user?.password || '',
-    //     subscription: user?.subscription || '',
 
-    // });
     const {theme} = useGlobalContext()
 
     const closeModal = () => {
@@ -276,7 +269,6 @@ const Account = () => {
                 </div>
                  </Modal>   
             }
-           {/* <Alert type="success" message="Your chnages have been saved successfully"></Alert> */}
         </section>
         <Footer/>
     </div>
