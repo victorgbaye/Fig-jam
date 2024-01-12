@@ -71,11 +71,11 @@
         width: 100%;
         padding: 12px 16px;
         border-radius: 8px;
-        border: 1px solid #E9BA67;
+        border: 1px solid #666;
         background: #FFF;
     }
     span:hover{
-        background: linear-gradient(91deg, #DCAC58 22.54%, #E38C6B 47.83%, #DB7C9A 55.52%, #D27DA7 74.48%);
+        // background: linear-gradient(91deg, #DCAC58 22.54%, #E38C6B 47.83%, #DB7C9A 55.52%, #D27DA7 74.48%);
     }
     .componentName{
         color: #333;
@@ -106,9 +106,10 @@
         // color: #222;
     font-size: 14px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 160%; /* 22.4px */
     letter-spacing: 0.238px;
+    // border: 1px solid red;
     }
     
 }
@@ -122,6 +123,14 @@
     .componentThumbnail{
         .cardLens{
             background: #2C2C2C;
+        }
+    }
+    .componentThumbnail:hover{
+        background: linear-gradient(to bottom, rgba(21, 21, 21, 0.5), rgba(63, 62, 62, 0.8)); /* Adjust gradient colors and direction */
+        opacity: 1;
+        cursor: pointer;
+        .cardLens{
+            display: block;
         }
     }
     .previewOverlay{

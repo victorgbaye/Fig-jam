@@ -62,7 +62,6 @@ const Subscription = () => {
 
   return (
     <div>
-      {/* <button onClick={handleClick}>Subscribe</button> */}
       <Button
       label='go pro'
       onClick={handleClick}
