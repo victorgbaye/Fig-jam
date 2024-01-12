@@ -1,5 +1,5 @@
 import styles from './Figcard.module.scss'
-import { useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // import  locked from '../../../assets/locked.svg'
 // import  darkLocked from '../../../assets/darkLocked.svg'
@@ -65,6 +65,24 @@ export const FigElementCard = ({title, paid}) => {
     setSignInModal(false)
     console.log('hello');
   }
+  const previewContainerRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (previewContainerRef.current && !previewContainerRef.current.contains(event.target)) {
+        setShowPreview(false);
+      }
+    };
+
+    if (showPreview) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showPreview]);
+
   return (
     // ${styles[theme]}
     <div className={` ${styles.figCardContainer} ${styles[theme]}`} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
@@ -118,7 +136,7 @@ export const FigElementCard = ({title, paid}) => {
       {
         showPreview &&
         <div className={styles.previewOverlay}>
-          <div className={styles.previewContainer}>
+          <div  ref={previewContainerRef} className={styles.previewContainer}>
             <section className={styles.previewHeader}>
               <p>Input style 1</p>
               <img src={theme == 'light' ? X : darkX} onClick={()=>setShowPreview(false)}/>
