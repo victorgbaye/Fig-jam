@@ -27,7 +27,7 @@ export const FigCard = ({componentName}) => {
 
   return (
     <Link to={`/component/${componentName}`}>
-      <div className={`${styles.figCardContainer} `} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
+      <div className={` ${styles.figCardContainer} ${styles[theme]}`} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
         <div className={styles.componentThumbnail}style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F5F5F5'}}>
         <img src={CategoryThumbnail}/>
         </div>
