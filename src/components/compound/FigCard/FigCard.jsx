@@ -152,7 +152,7 @@ export const FigElementCard = ({title, paid}) => {
                     <p style={{ color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{paid && user?.subscription == 'paid' ? 'Copy to figma' : paid && user?.subscription == 'free'? 'Premium Subscriber': 'Copy to figma' }</p>
                   </div>
               }
-                style={{padding:'12px 16px', background: theme == 'dark' ? '#333' : '#FFF', border: '1px solid #E9BA67'}}
+                style={{padding:'12px 16px', background: theme == 'dark' ? '#333' : '#FFF', border: '1px solid #666'}}
               />
             </section>
           </div>
