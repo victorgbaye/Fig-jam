@@ -58,18 +58,19 @@ const Navigation = () => {
         navigate('/')
   
       }
+
       return (
     <div >
-        <nav className={styles.nav} >
+        <nav className={`${styles.nav} ${styles[theme]}`}>
             <div className={styles.navBreadCrumb}>
-            <Link to="/">
-              <span style={{color:isHomePage? '#F5F5F5': !isHomePage ? '#CCC' : ''}}>FIG PLUG </span>
-            </Link>
-            {!isHomePage && (
-        <p style={{ color: getTextColor }}>
-           / {location.pathname.slice(1).charAt(0).toUpperCase() + location.pathname.slice(2).replace(/%20/g, '-')}
-        </p>
-      )}
+              <Link to="/">
+                <span style={{color:isHomePage? '#F5F5F5': !isHomePage ? '#CCC' : ''}}>FIG PLUG </span>
+              </Link>
+              {!isHomePage && (
+                <p style={{ color: getTextColor }}>
+                  / {location.pathname.slice(1).charAt(0).toUpperCase() + location.pathname.slice(2).replace(/%20/g, '-')}
+                </p>
+              )}
             </div>
             <div className={styles.userSec} >
               <div onClick={toggleTheme} style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'8px'}}>
@@ -97,7 +98,7 @@ const Navigation = () => {
               }
             {
             toggleDropdown &&
-            <div className={styles.navDropdown} >
+            <div className={`${styles.navDropdown}`}>
                 <Link to="/account">
                 <span>
                     <img src={userImage}/>

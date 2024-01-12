@@ -78,3 +78,18 @@
     cursor: pointer;
     border-radius: 8px;
 }
+
+.dark{
+    .navDropdown{
+        background: #222;
+        
+        span{
+            p{
+                color: #FFF;
+            }
+        }
+        span:hover{
+            background: #2C2C2C;
+        }
+    }
+}
