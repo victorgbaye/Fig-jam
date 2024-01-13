@@ -1,3 +1,4 @@
+import Footer from '../../components/compound/Footer/Footer'
 import { PageBanner } from  '../../components/compound/PageBanner/PageBanner'
 import styles from  './TermOfUse.module.scss'
 
@@ -52,6 +53,7 @@ Thank you for choosing theFigPlug. We &apos;re dedicated to providing a creative
 
         </p>
       </div>
+      <Footer/>
     </div>
   )
 }
