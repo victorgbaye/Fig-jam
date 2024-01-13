@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import  locked from '../../../assets/locked.svg'
 // import  darkLocked from '../../../assets/darkLocked.svg'
 import DesignThumbnail from '../../../assets/DesignThumbnail.svg'
-import CategoryThumbnail from '../../../assets/CategoryThumbnail.svg'
+// import CategoryThumbnail from '../../../assets/CategoryThumbnail.svg'
 import  copy from '../../../assets/copy.svg'
 import  darkCopy from '../../../assets/darkCopy.svg'
 import  cardLens from '../../../assets/cardLens.svg'
@@ -20,7 +20,7 @@ import { NotLoggedInModal, NotPremiumModal } from '../modal/Modal';
 import { Link } from 'react-router-dom';
 import Button from '../../UI/button/Button';
 
-export const FigCard = ({componentName}) => {
+export const FigCard = ({componentName, componentImage, componentLength}) => {
   const {theme} = useGlobalContext()
   
 
@@ -29,11 +29,11 @@ export const FigCard = ({componentName}) => {
     <Link to={`/component/${componentName}`}>
       <div className={` ${styles.figCardContainer} ${styles[theme]}`} style={{backgroundColor: theme == 'dark' ? '#333' : 'white'}}>
         <div className={styles.componentThumbnail}style={{backgroundColor: theme == 'dark' ? '#1A1A1A' : '#F5F5F5'}}>
-        <img src={CategoryThumbnail}/>
+        <img src={componentImage}/>
         </div>
         <div className={`${styles.cardDetails} ${styles[theme]}`}>
           <p className={styles.componentName} style={{color: theme == 'dark' ? '#F5F5F5' : '#333'}}>{componentName}</p>
-          <p className={styles.componentLength} style={{color: theme == 'dark' ? '#ccc' : '#666'}}>1 Component</p>
+          <p className={styles.componentLength} style={{color: theme == 'dark' ? '#ccc' : '#666'}}>{componentLength} Component</p>
         </div>
       </div>
     </Link>
@@ -42,6 +42,8 @@ export const FigCard = ({componentName}) => {
 
 FigCard.propTypes = {
   componentName: PropTypes.string,
+  componentImage: PropTypes.string.isRequired,
+  componentLength: PropTypes.number.isRequired,
 };
 
 export const FigElementCard = ({title, paid}) => {
