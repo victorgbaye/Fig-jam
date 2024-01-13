@@ -1,0 +1,21 @@
+.PageContent{
+    width: 740px;
+    margin: 0 auto;
+    margin-top: 45px;
+    background: white;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    overflow-y: hidden;
+
+    p{
+        color: #666;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.272px;
+    }
+}

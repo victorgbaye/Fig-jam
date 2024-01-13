@@ -23,7 +23,7 @@ const Footer = () => {
        ( <div className={` ${styles.footer} ${styles[theme]}` } style={{display: togleFooter && 'none'}}>
             <span>theFigPlug 2023</span>
             <div className={styles.footerPages}>
-                <Link>
+                <Link to='/contact'>
                 <p>Contact</p>
                 </Link>
                 <Link to='/termofuse'>

@@ -62,5 +62,31 @@ AccountInput.propTypes = {
   };
 
 
+  export const TextArea = ({ label, placeholder, value, onChange, style, name }) => {
+    const { theme } = useGlobalContext();
+  
+    return (
+      <div className={styles.Input}>
+        <label>{label}</label>
+        <textarea
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          className={`${styles.textAreaStyle} ${styles[theme]}`}
+          style={style}
+          name={name}
+        />
+      </div>
+    );
+  };
+  
+  TextArea.propTypes = {
+    label: PropTypes.string,
+    name: PropTypes.string,
+    placeholder: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    onChange: PropTypes.func,
+    style: PropTypes.object,
+  };
 
 export default Input

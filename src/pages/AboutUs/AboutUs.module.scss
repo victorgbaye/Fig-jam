@@ -1,0 +1,36 @@
+.AboutUsContainer{
+    max-height: 95vh;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+.PageContent{
+    width: 740px;
+    margin: 0 auto;
+    margin-top: 45px;
+    background: white;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+    overflow-y: hidden;
+
+
+   
+    h2{
+        color: #333;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 32px;
+        letter-spacing: 0.12px;
+    }
+    p{
+        color: #666;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.272px;
+    }
+}
