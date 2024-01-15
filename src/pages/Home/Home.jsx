@@ -9,6 +9,7 @@ import {useGlobalContext} from '../../context'
 import { FigCardData } from './FigCardData'
 import { useState } from 'react'
 import Categories from './Categories'
+import ScrollToTop from '../../components/compound/ScrollToTop/ScrollToTop'
 const Home = () => {
   const {theme} = useGlobalContext()
   const [cardData, setCardData] = useState(FigCardData)
@@ -60,6 +61,7 @@ const Home = () => {
         </section>
         <div style={{position:'absolute', }}>
           {/* <Footer/> */}
+          <ScrollToTop/>
         </div>
     </div>
     </>

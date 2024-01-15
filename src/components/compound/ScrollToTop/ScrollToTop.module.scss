@@ -1,0 +1,21 @@
+.ScrollToTop{
+    position: fixed;
+    right: 12px;
+    bottom: 10.698px;
+    display: flex;
+    align-items: center;
+    place-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    padding: 23.111px;
+    border-radius: 72.222px;
+    border: 0.722px solid var(--neutral-dividers-borders, #CCC);
+    background: var(--neutral-background-primary, #FFF);
+    img{
+    }
+}
+.ScrollToTop:hover{
+    cursor: pointer;
+}
