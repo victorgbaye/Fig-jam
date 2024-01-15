@@ -10,6 +10,7 @@ import { PageBanner } from '../../components/compound/PageBanner/PageBanner'
 import { useGlobalContext } from '../../context'
 import styles from './CategoryElements.module.scss'
 import { Link, useParams } from 'react-router-dom'
+import ScrollToTop from '../../components/compound/ScrollToTop/ScrollToTop'
 
 // import Footer from '../../components/compound/Footer/Footer'
 const CategoryElements = () => {
@@ -80,6 +81,7 @@ const CategoryElements = () => {
             />
         </section>
          {/* <Footer/> */}
+         <ScrollToTop/>
     </div>
   )
 }
