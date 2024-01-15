@@ -19,3 +19,8 @@
 .ScrollToTop:hover{
     cursor: pointer;
 }
+
+.dark{
+    border: 0.889px solid var(--neutral-dividers-borders, #4D4D4D);
+    background: var(--neutral-background-secondary, #333);
+}

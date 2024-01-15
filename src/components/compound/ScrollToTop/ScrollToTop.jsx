@@ -1,9 +1,13 @@
 import  { useState, useEffect } from 'react';
 import arrowUp from '../../../assets/arrowUp.svg'
+import arrowUpDark from '../../../assets/arrowUpDark.svg'
 import styles from './ScrollToTop.module.scss'
+import { useGlobalContext } from '../../../context';
 
 const ScrollToTop = () => {
+    const {theme} = useGlobalContext()
     const [isVisible, setIsVisible] = useState(false);
+
 
     // Show the button when the user scrolls down 100 pixels
     const handleScroll = () => {
@@ -29,12 +33,13 @@ const ScrollToTop = () => {
       };
     }, []);
   return (
-    <div className={styles.ScrollToTop}
+    <div
     id="scrollToTopButton"
     onClick={scrollToTop}
     style={{ display: isVisible ? 'flex' : 'none' }}
+    className={`${styles.ScrollToTop} ${styles[theme]}`}
     >
-        <img src={arrowUp}/>
+        <img src={theme == 'dark' ? arrowUpDark : arrowUp}/>
     </div>
   )
 }
