@@ -5,7 +5,7 @@ import { FigCard } from '../../components/compound/FigCard/FigCard'
 import Navigation from '../../components/compound/Navigation/Navigation'
 import styles from './Home.module.scss'
 import {useGlobalContext} from '../../context'
-import Footer from '../../components/compound/Footer/Footer'
+// import Footer from '../../components/compound/Footer/Footer'
 import { FigCardData } from './FigCardData'
 import { useState } from 'react'
 import Categories from './Categories'
@@ -59,7 +59,7 @@ const Home = () => {
             }
         </section>
         <div style={{position:'absolute', }}>
-          <Footer/>
+          {/* <Footer/> */}
         </div>
     </div>
     </>

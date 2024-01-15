@@ -11,7 +11,7 @@ import { useGlobalContext } from '../../context'
 import styles from './CategoryElements.module.scss'
 import { Link, useParams } from 'react-router-dom'
 
-import Footer from '../../components/compound/Footer/Footer'
+// import Footer from '../../components/compound/Footer/Footer'
 const CategoryElements = () => {
   const { componentName } = useParams();
   
@@ -79,7 +79,7 @@ const CategoryElements = () => {
             paid={false}
             />
         </section>
-         <Footer/>
+         {/* <Footer/> */}
     </div>
   )
 }

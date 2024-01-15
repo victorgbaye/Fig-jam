@@ -3,7 +3,7 @@
 .header{
     width: 100%;
     background-color:#222;
-    border-radius: 28px;
+    border-radius: 16px;
     padding: 40px;
     max-width: 100vw;
 
@@ -51,21 +51,24 @@
         display: flex;
         align-items: center;
         gap: 12px;
+        height: auto;
 
         p{
             background-color: #FFF;
             border-radius: 100px;
-            padding: 8px 12px;
+            padding: 4px 12px;
             // color: #434343;
             font-size: 14px;
             font-style: normal;
             font-weight: 400;
             line-height: 160%; /* 22.4px */
             letter-spacing: 0.238px;
+            border: 1px solid transparent;
+
         }
         p:hover{
-            border: 1px solid #EDEBE7;
             cursor: pointer;
+            border: 1px solid #EDEBE7;
 
         }
     }
@@ -95,7 +98,7 @@
         .FilterContainer{
             P{
                 color: #D1D1D1;
-                border: none;
+                border: 1px solid transparent;
             }
             P:hover{
                 
