@@ -14,7 +14,7 @@ import {Modal} from '../../components/compound/modal/Modal'
 // import Alert from "../../components/compound/Alert/Alert";
 import PinForm from "../../components/compound/PinForm/PinForm";
 import {useGlobalContext} from '../../context'
-import Footer from "../../components/compound/Footer/Footer";
+// import Footer from "../../components/compound/Footer/Footer";
 import { useSelector } from "react-redux";
 import Button from "../../components/UI/button/Button";
 // import { Navigate } from "react-router-dom";
@@ -78,7 +78,7 @@ const Account = () => {
     //     return <Navigate to='/'/>
     // }
   return (
-    <div style={{position:'relative'}}>
+    <div style={{position:'relative', height:'100%'}}>
         <PageBanner
         title='Account'
         />
@@ -270,7 +270,7 @@ const Account = () => {
                  </Modal>   
             }
         </section>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

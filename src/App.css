@@ -9,12 +9,14 @@
   padding: 0 40px 40px 40px;
   height: 100%;
   /* margin: 0 auto; */ 
+  height: 100vh;
 
 }
 
 .light{
   background-color: #F5F5F5;
   height: 100%;
+  min-height: 100vh;
 
 }
 
@@ -22,6 +24,7 @@
   height: 100%;
   background-color: #1A1A1A;
   color: #FFF;
+  min-height: 100vh;
 }
 
 
@@ -41,10 +44,7 @@
 
 @media only screen and (max-width: 768px) {
   /* CSS styles for mobile devices */
-  .App {
-    /* Add styles to adjust layout for mobile devices if needed */
-    
-  }
+
   
   /* Show or hide the MobileComponent based on the media query */
   .MobileComponent {
