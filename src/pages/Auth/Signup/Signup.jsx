@@ -10,6 +10,7 @@ import { registerUser } from "../../../features/user/userSlice"
 import SignupIcon from '../../../assets/SignupIcon.svg'
 import bgdesign from '../../../assets/bgdesign.svg'
 import bgdesignleft from '../../../assets/bgdesignleft.svg'
+import Navigation from "../../../components/compound/Navigation/Navigation"
 
 
 const initialState = {
@@ -51,7 +52,9 @@ const Signup = () => {
   }, [navigate, user])
   
   return (
-    <div style={{background:theme, height:'100vh'}}>
+    <div style={{background:theme, height:'100vh', maxHeight:'90vh'}}>
+      <Navigation/>
+      <div>
       <img src={bgdesignleft} style={{position: 'fixed', top: '50%', left: 0, transform: 'translateY(-50%)'}}/>
       <div className={styles.SignupContainer} >
           <h4>Sign Up</h4>
@@ -120,6 +123,7 @@ const Signup = () => {
 
       </div>
       <img src={bgdesign} style={{position:'fixed', top: '50%', right: 0, transform: 'translateY(-50%)'}}/>
+      </div>
     </div>
   )
 }

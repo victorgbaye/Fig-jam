@@ -46,7 +46,7 @@ const Login = () => {
 
   }, [navigate, user])
   return (
-    <div style={{background:theme, height:'100vh'}}>
+    <div style={{background:theme, height:'90vh'}}>
       <Navigation/>
       <div>
       <img src={bgdesignleft} style={{position: 'fixed', top: '50%', left: 0, transform: 'translateY(-50%)'}}/>
