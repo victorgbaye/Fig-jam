@@ -111,7 +111,7 @@ const Signup = () => {
                   <img src={SignupIcon} alt="Sign Up" /> Sign Up
                 </div>
               )}
-              style={{ height: '46px', backgroundColor: isLoading ? 'gray' : '/* Inherit or set desired color */' }}
+              style={{ height: '40px', background: theme == 'dark' ? '#FFF': isLoading && 'grey' , color: theme == 'dark' ? '#222' : '' }}
               type="submit"
               disabled={isLoading}
               />

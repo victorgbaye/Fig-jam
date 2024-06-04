@@ -10,10 +10,14 @@
     flex-direction: column;
     gap: 32px;
     // border: 1px solid black;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: var(--SM, 16px);
+    border: 1px solid var(--neutral-border-divider-2, #F1F1F1);
+    background: var(--Neutral-Background, #FFF);
+    padding: 20px;
 
     h4{
         font-size: 20px;
