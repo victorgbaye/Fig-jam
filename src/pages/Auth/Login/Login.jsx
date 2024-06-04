@@ -9,6 +9,7 @@ import { loginUser } from "../../../features/user/userSlice"
 import bgdesign from '../../../assets/bgdesign.svg'
 import bgdesignleft from '../../../assets/bgdesignleft.svg'
 import LogoutIcon from '../../../assets/LogoutIcon.svg'
+import Navigation from "../../../components/compound/Navigation/Navigation"
 
 const initialState = {
   email:'',
@@ -46,6 +47,8 @@ const Login = () => {
   }, [navigate, user])
   return (
     <div style={{background:theme, height:'100vh'}}>
+      <Navigation/>
+      <div>
       <img src={bgdesignleft} style={{position: 'fixed', top: '50%', left: 0, transform: 'translateY(-50%)'}}/>
       <div className={`${styles.LoginContainer} ${styles[theme]}`}>
 
@@ -87,6 +90,7 @@ const Login = () => {
         <p>Dont have an account? <Link to='/signup'><span>Sign Up</span></Link></p>
       </div>
       <img src={bgdesign} style={{position:'fixed', top: '50%', right: 0, transform: 'translateY(-50%)'}}/>
+      </div>
     </div>
   )
 }
