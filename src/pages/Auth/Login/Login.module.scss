@@ -40,6 +40,30 @@
 .LoginInputContainer{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
     
+}
+
+.dark{
+    .LoginContainer{
+        border: 1px solid var(--neutral-border-divider-2, #282828);
+        background: var(--Neutral-Surface, #333);
+        p, span{
+            color: var(--Neutral-TextSecondary, #CCC);
+            // font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px; /* 142.857% */
+            letter-spacing: 0.238px;
+        }
+        span{
+            color: var(--Neutral-TextPrimary, #F5F5F5);
+            // font-family: Nunito;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 120%;
+        }
+    }
 }

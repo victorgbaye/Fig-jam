@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
 import styles from './Input.module.scss'
 import { useGlobalContext } from '../../../context';
+import { useState } from 'react';
+import eye from '../../../assets/eye.svg'
 const Input = ({ label, type, placeholder, value, onChange, style, name }) => {
   const {theme} = useGlobalContext()
 
   return (
-    <div className={styles.Input}>
+    <div className={`${styles.Input} ${styles[theme]}`}>
         <label>{label}</label>
         <input
         type={type}
@@ -88,5 +90,50 @@ AccountInput.propTypes = {
     onChange: PropTypes.func,
     style: PropTypes.object,
   };
+
+  export const PasswordInput = ({ label, placeholder, value, onChange, style, name }) => {
+    const { theme } = useGlobalContext();
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  
+    const togglePasswordVisibility = () => {
+      setIsPasswordVisible(!isPasswordVisible);
+    };
+  
+    return (
+      <div className={`${styles.Input} ${styles[theme]}`}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+          <label>{label}</label>
+          <p style={{ fontSize: '12px' }}>Forgot password?</p>
+        </div>
+        <div style={{ width: '100%', position: 'relative' }}>
+          <input
+            type={isPasswordVisible ? 'text' : 'password'}
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+            className={`${styles.DefaultInputStyles} ${styles[theme]}`}
+            style={style}
+            name={name}
+          />
+          <img
+            src={eye}
+            style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
+            onClick={togglePasswordVisibility}
+            alt="Toggle visibility"
+          />
+        </div>
+      </div>
+    );
+  };
+  
+  PasswordInput.propTypes = {
+    label: PropTypes.string,
+    name: PropTypes.string,
+    placeholder: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    onChange: PropTypes.func,
+    style: PropTypes.object,
+  };
+  
 
 export default Input

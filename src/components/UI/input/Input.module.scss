@@ -6,9 +6,9 @@
     gap: 8px;
 
         .dark{
-            background: #2C2C2C;
-            border: 1px solid #555;
             color: white;
+            border: 1px solid var(--neutral-border-dividers, #4D4D4D);
+            background: var(--Neutral-Background, #1A1A1A);
         }
         label{
             color: var(--Neutral-TextPrimary, #333);
@@ -75,18 +75,33 @@
         font-weight: 400;
     }
 }
-.light{
-    border-bottom: 1px solid #EDEBE7;
+// .light{
+//     border-bottom: 1px solid #EDEBE7;
 
-}
+// }
 .dark{
-    border-bottom: 1px solid #555;
+    // border-bottom: 1px solid #555;
 
     label{
-        color: #D1D1D1;
+        color: var(--Neutral-TextPrimary, #F5F5F5);
+        // font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 133.333% */
+        letter-spacing: 0.204px;
     }
     input{
         color: white;
+    }
+    ::placeholder{
+        color: var(--Neutral-TextDisabled, #666);
+        // font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+        letter-spacing: 0.238px;
     }
 }
 .AccountInput{

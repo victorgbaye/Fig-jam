@@ -8,8 +8,11 @@ import { useDispatch, useSelector } from "react-redux"
 // import { store } from "../../../store"
 import { registerUser } from "../../../features/user/userSlice"
 import SignupIcon from '../../../assets/SignupIcon.svg'
-import bgdesign from '../../../assets/bgdesign.svg'
+import signupdark from '../../../assets/signupdark.svg'
+// import bgdesign from '../../../assets/bgdesign.svg'
+// import bgdesigndark from '../../../assets/bgdesigndark.svg'
 import bgdesignleft from '../../../assets/bgdesignleft.svg'
+import bgdesignleftdark from '../../../assets/bgdesignleftdark.svg'
 import Navigation from "../../../components/compound/Navigation/Navigation"
 
 
@@ -54,8 +57,8 @@ const Signup = () => {
   return (
     <div style={{background:theme, height:'100vh', maxHeight:'90vh'}}>
       <Navigation/>
-      <div>
-      <img src={bgdesignleft} style={{position: 'fixed', top: '50%', left: 0, transform: 'translateY(-50%)'}}/>
+      <div className={`${styles[theme]}`}>
+      <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{position: 'fixed', top: '50%', left: 0, transform: 'translateY(-50%)'}}/>
       <div className={styles.SignupContainer} >
           <h4>Sign Up</h4>
           <form onSubmit={onSubmit} className={styles.SignupInputContainer}>
@@ -107,11 +110,11 @@ const Signup = () => {
               <Button
               label={isLoading ? (
                 <div style={{display:'flex',alignItems:'center', gap:'8px', justifyContent:'center'}}>
-                  <img src={SignupIcon} alt="Sign Up" /> Signing up...
+                  <img src={theme === 'dark' ? signupdark : SignupIcon} alt="Sign Up" /> Signing up...
                 </div>
               ) : (
                 <div style={{display:'flex',alignItems:'center', gap:'8px', justifyContent:'center'}}>
-                  <img src={SignupIcon} alt="Sign Up" /> Sign Up
+                  <img src={theme === 'dark' ? signupdark : SignupIcon} alt="Sign Up" /> Sign Up
                 </div>
               )}
               style={{ height: '40px', background: theme == 'dark' ? '#FFF': isLoading && 'grey' , color: theme == 'dark' ? '#222' : '' }}
@@ -122,7 +125,7 @@ const Signup = () => {
           <p>Already have an account? <Link to='/login'><span>Log in</span></Link></p>
 
       </div>
-      <img src={bgdesign} style={{position:'fixed', top: '50%', right: 0, transform: 'translateY(-50%)'}}/>
+      <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{position: 'fixed', top: '50%', right: 0, transform: 'translateY(-50%) scaleX(-1)', height:'auto' }}/>
       </div>
     </div>
   )
