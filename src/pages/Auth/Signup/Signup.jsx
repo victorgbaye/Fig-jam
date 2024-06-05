@@ -58,7 +58,7 @@ const Signup = () => {
     <div style={{background:theme, height:'100vh', maxHeight:'90vh'}}>
       <Navigation/>
       <div className={`${styles[theme]}`}>
-      <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{position: 'fixed', top: '50%', left: 0, transform: 'translateY(-50%)'}}/>
+      <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{position: 'fixed', top: '50%', left: 0, transform: 'translateY(-50%)', height:'70%'}}/>
       <div className={styles.SignupContainer} >
           <h4>Sign Up</h4>
           <form onSubmit={onSubmit} className={styles.SignupInputContainer}>
@@ -125,7 +125,7 @@ const Signup = () => {
           <p>Already have an account? <Link to='/login'><span>Log in</span></Link></p>
 
       </div>
-      <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{position: 'fixed', top: '50%', right: 0, transform: 'translateY(-50%) scaleX(-1)', height:'auto' }}/>
+      <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{position: 'fixed', top: '50%', right: 0, transform: 'translateY(-50%) scaleX(-1)', height:'70%' }}/>
       </div>
     </div>
   )
