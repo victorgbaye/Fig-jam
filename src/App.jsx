@@ -16,6 +16,7 @@ import Subscription from './pages/Subscription/Subscription';
 import AboutUs from './pages/AboutUs/AboutUs';
 import TermOfUse from './pages/TermOfUse/TermOfUse';
 import Contact from './pages/Contact/Contact';
+import ForgotPassword from './pages/Auth/ForgotPassword/ForgotPassword';
 
 function App() {
   const {theme, toggleTheme} = useGlobalContext()
@@ -54,7 +55,8 @@ function App() {
             <Route path="/aboutus" element={ <AboutUs/>} />
             <Route path="/termofuse" element={<TermOfUse/>} />
             <Route path="/contact" element={<Contact/>} />            
-            
+            <Route path="/forgot-password" element={<ForgotPassword/>} />            
+
 
           </Routes>
         </Router>

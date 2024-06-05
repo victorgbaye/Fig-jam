@@ -3,6 +3,7 @@ import styles from './Input.module.scss'
 import { useGlobalContext } from '../../../context';
 import { useState } from 'react';
 import eye from '../../../assets/eye.svg'
+import { Link } from 'react-router-dom';
 const Input = ({ label, type, placeholder, value, onChange, style, name }) => {
   const {theme} = useGlobalContext()
 
@@ -103,7 +104,9 @@ AccountInput.propTypes = {
       <div className={`${styles.Input} ${styles[theme]}`}>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
           <label>{label}</label>
-          <p style={{ fontSize: '12px' }}>Forgot password?</p>
+          <Link to='/forgot-password' style={{textDecoration:'none'}}>
+            <p style={{ fontSize: '12px' }}>Forgot password?</p>
+          </Link>
         </div>
         <div style={{ width: '100%', position: 'relative' }}>
           <input
