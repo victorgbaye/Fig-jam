@@ -70,6 +70,7 @@ const Signup = () => {
               value={signupValues.firstname}
               onChange={handleChange}
               name='firstname'
+              hasError
               />
               <Input
               label="Last name"

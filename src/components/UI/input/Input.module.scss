@@ -30,6 +30,13 @@
     width: 100%;
     max-height: 40px;
 }
+.DefaultInputStyles:hover{
+    border: 1px solid#333333;
+}
+
+.DefaultInputStyles:focus{
+    border: 2px solid#333333;
+}
 .DefaultInputStyles::placeholder{
     color: var(--Neutral-TextDisabled, #CCC);
     // font-family: Inter;
@@ -38,6 +45,21 @@
     font-weight: 400;
     line-height: 20px; /* 142.857% */
     letter-spacing: 0.238px;
+}
+
+.Error {
+    border: 1px solid #CB4335;
+
+    &:focus {
+        border: 1px solid #CB4335;
+        outline: none;
+    }
+    &:hover{
+        border: 1px solid #CB4335;
+        outline: none;
+
+
+    }
 }
 .textAreaStyle{
     outline: none;
