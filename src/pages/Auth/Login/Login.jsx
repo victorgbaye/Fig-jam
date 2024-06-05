@@ -72,6 +72,7 @@ const Login = () => {
             value={loginValues.password}
             onChange={handleChange}
             name='password'
+            showForgotPasswordLink
             />
          <Button
               label={isLoading ? (

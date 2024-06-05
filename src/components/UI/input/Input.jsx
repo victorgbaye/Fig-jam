@@ -92,7 +92,7 @@ AccountInput.propTypes = {
     style: PropTypes.object,
   };
 
-  export const PasswordInput = ({ label, placeholder, value, onChange, style, name }) => {
+  export const PasswordInput = ({ label, placeholder, value, onChange, style, name, showForgotPasswordLink }) => {
     const { theme } = useGlobalContext();
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   
@@ -104,9 +104,11 @@ AccountInput.propTypes = {
       <div className={`${styles.Input} ${styles[theme]}`}>
         <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
           <label>{label}</label>
-          <Link to='/forgot-password' style={{textDecoration:'none'}}>
-            <p style={{ fontSize: '12px' }}>Forgot password?</p>
-          </Link>
+          {showForgotPasswordLink && (
+            <Link to='/forgot-password' style={{ textDecoration: 'none' }}>
+              <p style={{ fontSize: '12px' }}>Forgot password?</p>
+            </Link>
+          )}
         </div>
         <div style={{ width: '100%', position: 'relative' }}>
           <input
@@ -134,8 +136,13 @@ AccountInput.propTypes = {
     name: PropTypes.string,
     placeholder: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
     style: PropTypes.object,
+    showForgotPasswordLink: PropTypes.bool, // Add this prop type
+  };
+  
+  PasswordInput.defaultProps = {
+    showForgotPasswordLink: false, // Default value is true to show the link
   };
   
 

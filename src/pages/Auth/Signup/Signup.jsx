@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import Button from "../../../components/UI/button/Button"
-import Input from "../../../components/UI/input/Input"
+import Input, { PasswordInput } from "../../../components/UI/input/Input"
 import styles from './Signup.module.scss'
 import { useGlobalContext } from "../../../context"
 import { useState, useEffect } from 'react'
@@ -89,7 +89,7 @@ const Signup = () => {
               onChange={handleChange}
               name='email'
               />
-              <Input
+              <PasswordInput
               label="Password"
               type="password"
               placeholder="Type password here"
@@ -98,7 +98,7 @@ const Signup = () => {
               onChange={handleChange}
               name='password'
               />
-              <Input
+              <PasswordInput
               label="Re -enter password"
               type="password"
               placeholder="Type password here"
@@ -106,6 +106,7 @@ const Signup = () => {
               value={signupValues.password}
               onChange={handleChange}
               name='password'
+              
               />
               <Button
               label={isLoading ? (
