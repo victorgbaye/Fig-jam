@@ -20,6 +20,15 @@
             line-height: 16px; /* 133.333% */
             letter-spacing: 0.204px;
         }
+        .ErrorText{
+            color: var(--Alert-Text, #943126);
+            // font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px; /* 133.333% */
+            letter-spacing: 0.204px;
+        }
 }
 
 .DefaultInputStyles{
@@ -61,6 +70,7 @@
 
     }
 }
+
 .textAreaStyle{
     outline: none;
     padding: 8px 16px;
