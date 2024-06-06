@@ -141,7 +141,7 @@ const Signup = () => {
               disabled={isLoading}
             />
           </form>
-          <p>Already have an account? <Link to='/login'><span>Log in</span></Link></p>
+          <p className={styles.authpagelink}>Already have an account? <Link to='/login'><span>Log in</span></Link></p>
         </div>
         <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{ position: 'fixed', top: '50%', right: 0, transform: 'translateY(-50%) scaleX(-1)', height: '70%' }} />
       </div>

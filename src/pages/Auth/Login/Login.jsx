@@ -102,7 +102,7 @@ const Login = () => {
               disabled={isLoading}
             />
           </form>
-          <p>{`Don't have an account? `}<Link to='/signup'><span>Sign Up</span></Link></p>
+          <p className={styles.authpagelink}>{`Don't have an account? `}<Link to='/signup'><span>Sign Up</span></Link></p>
         </div>
         <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{ position: 'fixed', top: '50%', right: 0, transform: 'translateY(-50%) scaleX(-1)', height: '70%' }} />
       </div>

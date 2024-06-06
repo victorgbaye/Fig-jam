@@ -12,7 +12,7 @@ const Input = ({ label, type, placeholder, value, onChange, style, name, hasErro
   return (
     <div className={`${styles.Input} ${styles[theme]}`}>
       <label>{label}</label>
-      <div style={{width:'100%', display:'flex', flexDirection:'column', alignItems:'flex-start'}}>
+      <div style={{width:'100%', display:'flex', flexDirection:'column', alignItems:'flex-start'}} >
       <input
         type={type}
         placeholder={placeholder}
@@ -121,7 +121,7 @@ AccountInput.propTypes = {
           <label>{label}</label>
           {showForgotPasswordLink && (
             <Link to='/forgot-password' style={{ textDecoration: 'none' }}>
-              <p style={{ fontSize: '12px' }}>Forgot password?</p>
+              <p style={{ fontSize: '12px' }} className={styles.forgotpassword}>Forgot password?</p>
             </Link>
           )}
         </div>

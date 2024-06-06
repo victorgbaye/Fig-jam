@@ -48,7 +48,7 @@
     .SignupContainer{
         border: 1px solid var(--neutral-border-divider-2, #282828);
         background: var(--Neutral-Surface, #333);
-        p, span{
+        .authpagelink, span{
             color: var(--Neutral-TextSecondary, #CCC);
             // font-family: Inter;
             font-size: 14px;

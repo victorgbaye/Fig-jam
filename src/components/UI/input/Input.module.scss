@@ -4,24 +4,45 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
-
+    .ErrorText{
+        color: var(--Alert-Text, #943126);
+        // font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 133.333% */
+        letter-spacing: 0.204px;
+    }
+    
         .dark{
             color: white;
             border: 1px solid var(--neutral-border-dividers, #4D4D4D);
             background: var(--Neutral-Background, #1A1A1A);
+
+            &:focus {
+                border: 2px solid #F5F5F5;
+                outline: none;
+            }
+            &:hover{
+                border: 1px solid #F5F5F5;
+                outline: none;
+        
+        
+            }
+            
+            .ErrorText{
+                color: var(--Alert-Text, #943126);
+                // font-family: Inter;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 16px; /* 133.333% */
+                letter-spacing: 0.204px;
+            }
         }
         label{
             color: var(--Neutral-TextPrimary, #333);
             /* Caption/Caption Regular */
-            // font-family: Inter;
-            font-size: 12px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 16px; /* 133.333% */
-            letter-spacing: 0.204px;
-        }
-        .ErrorText{
-            color: var(--Alert-Text, #943126);
             // font-family: Inter;
             font-size: 12px;
             font-style: normal;
@@ -57,7 +78,7 @@
 }
 
 .Error {
-    border: 1px solid #CB4335;
+    border: 2px solid #CB4335;
 
     &:focus {
         border: 1px solid #CB4335;
@@ -113,6 +134,30 @@
 // }
 .dark{
     // border-bottom: 1px solid #555;
+    .Error {
+        border: 2px solid #F1948A;
+
+    
+        &:focus {
+            border: 2px solid  #F5F5F5;
+            outline: none;
+        }
+        &:hover{
+            border: 1px solid  #F5F5F5;
+            outline: none;
+    
+    
+        }
+    }
+    .ErrorText{
+        color: var(--Alert-Text, #943126);
+        // font-family: Inter;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 133.333% */
+        letter-spacing: 0.204px;
+    }
 
     label{
         color: var(--Neutral-TextPrimary, #F5F5F5);
@@ -135,6 +180,11 @@
         line-height: 20px; /* 142.857% */
         letter-spacing: 0.238px;
     }
+    
+    .forgotpassword{
+        color: #F5F5F5;
+    }
+
 }
 .AccountInput{
    outline: none;
