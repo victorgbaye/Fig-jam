@@ -86,10 +86,14 @@ const Account = () => {
     
                 {
                 isEditing ?
-            <div className={styles.editButton} onClick={handleSubmit}>
-                <img src={Save}/>
-                <p>Save</p>
-            </div> 
+                <div>
+                    <div className={styles.editButton} onClick={handleSubmit}>
+                        <img src={Save}/>
+                        <p>Save</p>
+                    </div>
+                    <Button style={{color:'#CCC', background:'none'}} label={<p>Canecl</p>}/>
+
+                </div>
             :
             (<>
                 <div className={styles.editButton} onClick={()=>setEditModalOpen(true)} style={{background:theme == 'light'? '#222' : '#FFF'}}>

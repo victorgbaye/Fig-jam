@@ -127,13 +127,16 @@
         font-size: 16px;
         font-weight: 400;
     }
+        border-bottom: 1px solid #EDEBE7;
+
 }
 // .light{
 //     border-bottom: 1px solid #EDEBE7;
 
 // }
+// 
 .dark{
-    // border-bottom: 1px solid #555;
+
     .Error {
         border: 2px solid #F1948A;
 
@@ -185,7 +188,22 @@
         color: #F5F5F5;
     }
 
+    // .AccountInput{
+    //     outline: none;
+    //     border: none;
+    //     width: 100%;
+    //     background: transparent;
+    //     border-bottom: 1px solid var(--neutral-border-divider-2, #282828);
+
+    //  }
 }
+.dark:has(.AccountInput) {
+    outline: none;
+    border: none;
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid var(--neutral-border-divider-2, #282828);
+  }
 .AccountInput{
    outline: none;
    border: none;

@@ -11,6 +11,8 @@ import bgdesignleft from '../../../assets/bgdesignleft.svg';
 import bgdesignleftdark from '../../../assets/bgdesignleftdark.svg';
 import cycle from '../../../assets/cycle.svg';
 import logindark from '../../../assets/logindark.svg';
+import Back from '../../../assets/arrow-left-line.svg'
+import darkBack from '../../../assets/darkBack.svg'
 import Navigation from "../../../components/compound/Navigation/Navigation";
 
 const initialState = {
@@ -65,6 +67,9 @@ const ForgotPassword = () => {
         <img src={theme === 'dark' ? bgdesignleftdark : bgdesignleft} style={{ position: 'fixed', top: '50%', left: 0, transform: 'translateY(-50%)', height: '70%' }} />
         <div className={`${styles.ForgotPasswordContainer} ${styles[theme]}`}>
           {/* <h4>Log in</h4> */}
+          <div className={styles.back}>
+            <img src={theme === 'dark'? darkBack : Back} style={{height :'30px'}}/>
+          </div>
           <p style={{display:'flex', alignItems:'flex-start', justifyContent:'flex-start', textAlign:'left'}}>Enter your email address to receive instructions on how to reset your password</p>
           <form onSubmit={onSubmit} className={styles.LoginInputContainer}>
             <Input
